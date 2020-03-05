@@ -21,6 +21,11 @@ academic capacity, for now please cite [the following preprint](https://arxiv.or
 
     Goswami, R.; Goswami, A.; Singh, J. K. (2019). "d-SEAMS: Deferred Structural Elucidation Analysis for Molecular Simulations". arXiv:1909.09830 [physics.comp-ph].
 
+Here, try the abstract:
+
+??? abstract "d-SEAMS: Deferred Structural Elucidation Analysis for Molecular Simulations"
+     Structural analyses are an integral part of computational research on nucleation and supercooled water, whose accuracy and efficiency can impact the validity and feasibility of such studies. The underlying molecular mechanisms of these often elusive and computationally expensive processes can be inferred from the evolution of ice-like structures, determined using appropriate structural analysis techniques. We present d-SEAMS, a free and open-source post-processing engine for the analysis of molecular dynamics trajectories, which is specifically able to qualitatively classify ice structures, in both strong confinement and bulk systems. For the first time, recent algorithms for confined ice structure determination have been implemented, along with topological network criteria for bulk ice structure determination. Recognizing the need for customization in structural analysis, d-SEAMS has a unique code architecture, built with `nix`, employing a `YAML`-`Lua` scripting pipeline. The software has been designed to be user-friendly and easy to extend. The engine outputs are compatible with popular graphics software suites, allowing for immediate visual insights into the systems studied. We demonstrate the features of d-SEAMS by using it to analyze nucleation in the bulk regime and for quasi-one and quasi-two-dimensional systems. Structural time evolution and quantitative metrics are determined for heterogenous ice nucleation on a silver-exposed β-AgI surface, homogenous ice nucleation, flat monolayer square ice formation and freezing of an ice nanotube. 
+
 ## Details
 
 - There's a [landing page](https://dseams.info) which you might be looking for
