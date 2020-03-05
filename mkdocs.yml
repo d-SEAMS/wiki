@@ -17,7 +17,7 @@ theme:
 repo_name: "d-SEAMS/seams-core"
 repo_url: "https://github.com/d-SEAMS/seams-core"
 # Disable edits here
-edit_uri: "https://github.com/d-SEAMS/wiki/docs/"
+edit_uri: "https://github.com/d-SEAMS/wiki/edit/master/docs/"
 
 # Feature flags for functionality that alters behavior significantly, and thus
 # may be a matter of taste
