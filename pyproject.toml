@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "d-SEAMS_wiki"
+version = "0.1.0"
+description = "A wiki made with mkdocs, so therefore with all the trimmings"
+authors = ["Rohit Goswami <rohit.goswami@aol.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mkdocs = "^1.1"
+mkdocs-material = "^4.6.3"
+mkdocs-minify-plugin = "^0.2.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
