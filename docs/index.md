@@ -1,4 +1,4 @@
-# Welcome to the d-SEAMS Wiki
+# Index
 
 ## Details
 

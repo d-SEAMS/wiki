@@ -11,6 +11,8 @@ theme:
     code: "Ubuntu Mono"
   logo: "images/logo.png"
   favicon: "images/favicon.ico"
+  feature:
+    tabs: true
 
 repo_name: "d-SEAMS/seams-core"
 repo_url: "https://github.com/d-SEAMS/seams-core"
@@ -19,10 +21,10 @@ edit_uri: "https://github.com/d-SEAMS/wiki/docs/"
 
 # Feature flags for functionality that alters behavior significantly, and thus
 # may be a matter of taste
-feature:
-  # Another layer on top of the main navigation for larger screens in the form
-  # of tabs, especially useful for larger documentation projects
-  tabs: true
+# feature:
+# Another layer on top of the main navigation for larger screens in the form
+# of tabs, especially useful for larger documentation projects
+# tabs: true
 
 # Material includes the search in the header as a partial, not as a separate
 # template, so it's correct that search.html is missing
@@ -48,6 +50,15 @@ extra:
     # - type: "linkedin"
     #   link: "https://www.linkedin.com/in/HaoZeke"
 
+# Page tree
+# nav:
+#   - Index: index.md
+#   - Code Usage:
+#       - Lua: code/lua.md
+#   - Contributing: Contributing.md
+#   - Code of Conduct: Code_of_Conduct.md
+#   - License: license.md
+
 markdown_extensions:
   - pymdownx.arithmatex
   - pymdownx.betterem:
@@ -69,6 +80,7 @@ markdown_extensions:
   - codehilite
   - toc:
       permalink: true
+  - admonition
 
 plugins:
   - search
