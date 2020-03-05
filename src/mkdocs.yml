@@ -1,7 +1,79 @@
 site_name: d-SEAMS Wiki
+site_url: https://wiki.dseams.info
 theme:
-  name: 'material'
+  name: "material"
+  language: "en"
+  palette:
+    primary: "blue grey"
+    accent: "indigo"
+  font:
+    text: "Rubik"
+    code: "Ubuntu Mono"
+  logo: "images/logo.png"
+  favicon: "images/favicon.ico"
+
+repo_name: "d-SEAMS/seams-core"
+repo_url: "https://github.com/d-SEAMS/seams-core"
+# Disable edits here
+edit_uri: "https://github.com/d-SEAMS/wiki/src/docs/"
+
+# Feature flags for functionality that alters behavior significantly, and thus
+# may be a matter of taste
+feature:
+  # Another layer on top of the main navigation for larger screens in the form
+  # of tabs, especially useful for larger documentation projects
+  tabs: true
+
+# Material includes the search in the header as a partial, not as a separate
+# template, so it's correct that search.html is missing
+include_search_page: false
+
+# Material doesn't use MkDocs search functionality but provides its own. For
+# this reason, only the search index needs to be built
+search_index_only: true
+
+# Copyright
+copyright: "Copyright &copy; 2019 -- present d-SEAMS Core Team"
+
+# google_analytics:
+#   - "UA-109503488-15"
+#   - "auto"
+
+extra:
+  social:
+    - type: "github"
+      link: "https://github.com/d-SEAMS"
+    # - type: "twitter"
+    #   link: "https://twitter.com/rg0swami"
+    # - type: "linkedin"
+    #   link: "https://www.linkedin.com/in/HaoZeke"
+
+markdown_extensions:
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - codehilite
+  - toc:
+      permalink: true
+
 plugins:
   - search
   - minify:
       minify_html: true
+
+extra_javascript:
+  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
