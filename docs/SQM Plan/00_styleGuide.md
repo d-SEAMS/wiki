@@ -3,6 +3,14 @@
 As noted [on the SQM Plan](https://wiki.dseams.info/sqm%20plan/#style-guide), there is a diverse array of tools and languages which
 are tied together in a seamless whole for the analysis of trajectories.
 
+## Docs
+
+- The basic premise is that the documentation serves as a **single source of
+  truth**. The [Gitlab
+  style-guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
+  on documentation and collaboration is an excellent starting point.
+- Every change should be documented, along with the rationale behind the change
+
 ## Code Formatting
 
 - Formatting should be consistent
@@ -28,19 +36,19 @@ provided in the project root. The tool is [available online](https://clang.llvm.
 ## C++ Guide
 
 - `clang-format` is the preferred tool for formatting the code (defaults work
-fine)
+  fine)
 - The `llvm` ecosystem and static analysis are favored heavily, including the
   use of `clang`
 - We strive to ensure modern (min. C++11) code as far as possible
 - It is nicer to have verbosity (through comments) than verbose code
 
 !!! warning "Use namespaces"
-    Namespaces are crucial to our workflow, **no top-level imports** are allowed
+Namespaces are crucial to our workflow, **no top-level imports** are allowed
 
 - Doxygen is used for generating [API documentation](https://docs.dseams.info)
 
 !!! note "Annotate scientific details"
-    We would prefer that all formulae are documented (with LaTeX) for every method where applicable, along with references
+We would prefer that all formulae are documented (with LaTeX) for every method where applicable, along with references
 
 - Unit tests are exceedingly important, due to the modular structure of the code
   - We use Catch2 for testing
@@ -60,8 +68,8 @@ We leverage the following libraries:
 - [Boost Math](https://www.boost.org/doc/libs/?view=category_math) for spherical harmonics
 
 !!! note "Use included libraries"
-    We support a wide range of popular libraries, so do not add additional ones
-    unless they are crucial to the algorithm and furthermore **are part of the nix build**
+We support a wide range of popular libraries, so do not add additional ones
+unless they are crucial to the algorithm and furthermore **are part of the nix build**
 
 ### Resources
 
@@ -74,9 +82,9 @@ documentation is the best source.
 - Every script must have details of which trajectory is required
 
 !!! warning "Document lua"
-    Since our Doxygen setup does not extract `lua` function descriptions, do
-    remember to link to the C++ API and describe functions in the associated
-    markdown file. Also, you will want to update the wiki to include the lua functions
+Since our Doxygen setup does not extract `lua` function descriptions, do
+remember to link to the C++ API and describe functions in the associated
+markdown file. Also, you will want to update the wiki to include the lua functions
 
 ### Resources
 
@@ -88,9 +96,9 @@ documentation is the best source.
 - Use short comments
 
 !!! note "Examples"
-    It is highly unlikely that a YAML file will be added without a corresponding
-    trajectory (on figshare preferably) and a Lua script, thus it is best to
-    **add an example** to the [user wiki](../examples/index)
+It is highly unlikely that a YAML file will be added without a corresponding
+trajectory (on figshare preferably) and a Lua script, thus it is best to
+**add an example** to the [user wiki](../examples/index)
 
 ### References
 
@@ -100,16 +108,16 @@ documentation is the best source.
 ## Nix Guide
 
 !!! danger
-    This is often one of the most difficult parts of the work-flow to grasp due
-    to the functional programming principles involved.
-    
+This is often one of the most difficult parts of the work-flow to grasp due
+to the functional programming principles involved.
+
 - **Never** use anything locally built
 - **Purity** is required during your builds (the CI enforces this)
 
 ??? info
-    In-spite of this, most contributors will not have to mess around with the
-    nix-build setup more than what will be natural upon inspecting the [existing code](https://github.com/d-SEAMS/seams-core).
-    
+In-spite of this, most contributors will not have to mess around with the
+nix-build setup more than what will be natural upon inspecting the [existing code](https://github.com/d-SEAMS/seams-core).
+
 ### Resources
 
 - [Nix pills](https://nixos.org/nixos/nix-pills/index.html)
@@ -117,6 +125,6 @@ documentation is the best source.
 - [Existing code](https://github.com/d-SEAMS/seams-core/blob/master/shell.nix)
 
 ??? note
-    Historically, the `nix-lang` derivations were originally written in an
-    `org-mode` file and tangled out to separate segments. This was depreciated
-    since it made it harder for non-emacs users to contribute.
+Historically, the `nix-lang` derivations were originally written in an
+`org-mode` file and tangled out to separate segments. This was depreciated
+since it made it harder for non-emacs users to contribute.
