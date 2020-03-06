@@ -3,14 +3,6 @@
 As noted [on the SQM Plan](https://wiki.dseams.info/sqm%20plan/#style-guide), there is a diverse array of tools and languages which
 are tied together in a seamless whole for the analysis of trajectories.
 
-## Docs
-
-- The basic premise is that the documentation serves as a **single source of
-  truth**. The [Gitlab
-  style-guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
-  on documentation and collaboration is an excellent starting point.
-- Every change should be documented, along with the rationale behind the change
-
 ## Code Formatting
 
 - Formatting should be consistent

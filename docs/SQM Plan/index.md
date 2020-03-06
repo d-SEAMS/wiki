@@ -24,3 +24,12 @@ presented in this section will make a PR much more attractive.
 
 Hence a separate section for dealing with the various styles and how
 they tie into each other [is here](00_styleGuide).
+
+
+### Docs
+
+- The basic premise is that the documentation serves as a **single source of
+  truth**. The [Gitlab
+  style-guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
+  on documentation and collaboration is an excellent starting point.
+- Every change should be documented, along with the rationale behind the change
