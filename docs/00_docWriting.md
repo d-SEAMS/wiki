@@ -18,4 +18,4 @@ mkdocs serve
 ### Resources
 
 - Official mkdocs [documentation](https://www.mkdocs.org/user-guide/writing-your-docs/)
-- Material mkdocs [theme documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/)
+- Material mkdocs [theme documentation](https://squidfunk.github.io/mkdocs-material/)

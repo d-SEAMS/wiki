@@ -1,26 +1,27 @@
-# d-SEAMS Style Guide
+# Style Guide
 
-As noted on the SQM Plan, there is a diverse array of tools and languages which
+As noted [on the SQM Plan](./index.md/#style-guide), there is a diverse array of tools and languages which
 are tied together in a seamless whole for the analysis of trajectories.
 
 ## C++ Guide
+
 - We strive to ensure modern (min. C++11) code as far as possible
 - It is nicer to have verbosity (through comments) than verbose code
 
 !!! warning Use Namespaces
-   Namespaces are crucial to our workflow, **no top-level imports** are allowed
+    Namespaces are crucial to our workflow, **no top-level imports** are allowed
 
 - Doxygen is used for generating [API documentation](https://docs.dseams.info)
 
 !!! note Annotate scientific details
-   We would prefer that all formulae are documented (with LaTeX) for every
-   method where applicable, along with references
+    We would prefer that all formulae are documented (with LaTeX) for every method where applicable, along with references
 
 - Unit tests are exceedingly important, due to the modular structure of the code
   - We use Catch2 for testing
-- Every C++ function must have a Lua interface which *must be* documented
+- Every C++ function must have a Lua interface which _must be_ documented
 
 We leverage the following libraries:
+
 - [Catch2](https://github.com/catchorg/Catch2) for tests
 - [cxxopts](https://github.com/jarro2783/cxxopts) for parsing command line options
 - [rang](https://github.com/agauniyal/rang) for terminal styles (ANSI)
@@ -47,10 +48,9 @@ documentation is the best source.
 - Every script must have details of which trajectory is required
 
 !!! warning Document lua
-    Since our Doxygen setup does not extract `lua` function descriptions, do
-    remember to link to the C++ API and describe functions in the associated
-    markdown file. Also, you will want to update the wiki to include the lua functions
-
+Since our Doxygen setup does not extract `lua` function descriptions, do
+remember to link to the C++ API and describe functions in the associated
+markdown file. Also, you will want to update the wiki to include the lua functions
 
 ### Resources
 
@@ -62,10 +62,10 @@ documentation is the best source.
 - Use short comments
 
 !!! note Examples
-    It is highly unlikely that a YAML file will be added without a corresponding
-    trajectory (on figshare preferably) and a Lua script, thus it is best to
-    **add an example** to the [user wiki](../examples/index)
-    
+It is highly unlikely that a YAML file will be added without a corresponding
+trajectory (on figshare preferably) and a Lua script, thus it is best to
+**add an example** to the [user wiki](../examples/index)
+
 ### References
 
 - [yaml-cpp](https://github.com/jbeder/yaml-cpp) documentation
