@@ -70,3 +70,27 @@ documentation is the best source.
 
 - [yaml-cpp](https://github.com/jbeder/yaml-cpp) documentation
 - [Official specifications](https://yaml.org/)
+
+## Nix Guide
+
+!!! danger
+    This is often one of the most difficult parts of the work-flow to grasp due
+    to the functional programming principles involved.
+    
+- **Never** use anything locally built
+- **Purity** is required during your builds (the CI enforces this)
+
+??? info
+    In-spite of this, most contributors will not have to mess around with the
+    nix-build setup more than what will be natural upon inspecting the [existing code](https://github.com/d-SEAMS/seams-core).
+    
+### Resources
+
+- [Nix pills](https://nixos.org/nixos/nix-pills/index.html)
+- Official [nix-lang manual](https://nixos.org/nix/manual/)
+- [Existing code](https://github.com/d-SEAMS/seams-core/blob/master/shell.nix)
+
+??? note
+    Historically, the `nix-lang` derivations were originally written in an
+    `org-mode` file and tangled out to separate segments. This was depreciated
+    since it made it harder for non-emacs users to contribute.
