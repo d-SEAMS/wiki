@@ -3,8 +3,34 @@
 As noted [on the SQM Plan](https://wiki.dseams.info/sqm%20plan/#style-guide), there is a diverse array of tools and languages which
 are tied together in a seamless whole for the analysis of trajectories.
 
+## Code Formatting
+
+- Formatting should be consistent
+- Consistency is best obtained by standardized automated tooling
+- This may sound a lot like the `python` methodology, but it differs from
+  `python` in that it is a lot more sane to not enforce white-space in the
+  language itself
+- The sweet-spot is the usage of post-coding formatters, which are sensitive to
+  user-directives
+- These formatters are thus IDE independent and also flexible in terms of
+  allowing judicious diversions from the style-guide
+
+### Clang Format
+
+The best way to auto-format code is the `clang-format` tool. Custom rules are often
+provided in the project root. The tool is [available online](https://clang.llvm.org/docs/ClangFormat.html).
+
+- This works for most IDEs:
+  - [Emacs](https://github.com/lassik/emacs-format-all-the-code)
+  - [Sublime Text 3](https://packagecontrol.io/packages/Clang%20Format)
+  - [Vim](https://github.com/rhysd/vim-clang-format)
+
 ## C++ Guide
 
+- `clang-format` is the preferred tool for formatting the code (defaults work
+fine)
+- The `llvm` ecosystem and static analysis are favored heavily, including the
+  use of `clang`
 - We strive to ensure modern (min. C++11) code as far as possible
 - It is nicer to have verbosity (through comments) than verbose code
 
