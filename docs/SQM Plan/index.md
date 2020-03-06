@@ -15,11 +15,12 @@ presented in this section will make a PR much more attractive.
 
 ## Style Guide
 
-- The d-SEAMS ecosystem consists of a C++ back-end
-- This is supplemented by a front-end in Lua
-- Initial configuration is through a YAML input
-- It is built with Nix (and CMake)
-- The visualization is effected often through `python` interfaces to OVITO
+???+ info "Diversity"
+    - The d-SEAMS ecosystem consists of a C++ back-end
+    - This is supplemented by a front-end in Lua
+    - Initial configuration is through a YAML input
+    - It is built with Nix (and CMake)
+    - The visualization is effected often through `python` interfaces to OVITO
 
-Thus there is a separate section for dealing with the various styles and how
-they tie into each [other here](styleGuide.md).
+Hence a separate section for dealing with the various styles and how
+they tie into each other [is here](00_styleGuide).

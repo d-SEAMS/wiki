@@ -1,6 +1,6 @@
 # Style Guide
 
-As noted [on the SQM Plan](./index.md/#style-guide), there is a diverse array of tools and languages which
+As noted [on the SQM Plan](https://wiki.dseams.info/sqm%20plan/#style-guide), there is a diverse array of tools and languages which
 are tied together in a seamless whole for the analysis of trajectories.
 
 ## C++ Guide
@@ -8,12 +8,12 @@ are tied together in a seamless whole for the analysis of trajectories.
 - We strive to ensure modern (min. C++11) code as far as possible
 - It is nicer to have verbosity (through comments) than verbose code
 
-!!! warning Use Namespaces
+!!! warning "Use namespaces"
     Namespaces are crucial to our workflow, **no top-level imports** are allowed
 
 - Doxygen is used for generating [API documentation](https://docs.dseams.info)
 
-!!! note Annotate scientific details
+!!! note "Annotate scientific details"
     We would prefer that all formulae are documented (with LaTeX) for every method where applicable, along with references
 
 - Unit tests are exceedingly important, due to the modular structure of the code
@@ -33,7 +33,7 @@ We leverage the following libraries:
 - [Boost Geometry](https://www.boost.org/doc/libs/1_68_0/libs/geometry/doc/html/index.html) for working with different coordinates
 - [Boost Math](https://www.boost.org/doc/libs/?view=category_math) for spherical harmonics
 
-!!! note Use included libraries
+!!! note "Use included libraries"
     We support a wide range of popular libraries, so do not add additional ones
     unless they are crucial to the algorithm and furthermore **are part of the nix build**
 
@@ -47,10 +47,10 @@ documentation is the best source.
 - All `lua` scripts must be accompanied by comments
 - Every script must have details of which trajectory is required
 
-!!! warning Document lua
-Since our Doxygen setup does not extract `lua` function descriptions, do
-remember to link to the C++ API and describe functions in the associated
-markdown file. Also, you will want to update the wiki to include the lua functions
+!!! warning "Document lua"
+    Since our Doxygen setup does not extract `lua` function descriptions, do
+    remember to link to the C++ API and describe functions in the associated
+    markdown file. Also, you will want to update the wiki to include the lua functions
 
 ### Resources
 
@@ -61,10 +61,10 @@ markdown file. Also, you will want to update the wiki to include the lua functio
 
 - Use short comments
 
-!!! note Examples
-It is highly unlikely that a YAML file will be added without a corresponding
-trajectory (on figshare preferably) and a Lua script, thus it is best to
-**add an example** to the [user wiki](../examples/index)
+!!! note "Examples"
+    It is highly unlikely that a YAML file will be added without a corresponding
+    trajectory (on figshare preferably) and a Lua script, thus it is best to
+    **add an example** to the [user wiki](../examples/index)
 
 ### References
 
