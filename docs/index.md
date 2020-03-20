@@ -25,6 +25,23 @@ If you use this software please cite the following paper:
 
     Goswami, R., Goswami, A., & Singh, J. K. (2020). d-SEAMS: Deferred Structural Elucidation Analysis for Molecular Simulations. Journal of Chemical Information and Modeling. https://doi.org/10.1021/acs.jcim.0c00031
 
+??? info "Bibtex Entry"
+         @Article{Goswami2020,
+         author={Goswami, Rohit and Goswami, Amrita and Singh, Jayant Kumar},
+         title={d-SEAMS: Deferred Structural Elucidation Analysis for Molecular
+         Simulations},
+         journal={Journal of Chemical Information and Modeling},
+         year={2020},
+         month={Mar},
+         day={20},
+         publisher={American Chemical Society},
+         issn={1549-9596},
+         doi={10.1021/acs.jcim.0c00031},
+         url={https://doi.org/10.1021/acs.jcim.0c00031}
+         }
+
+
+
 Here, try the abstract:
 
 ??? abstract "d-SEAMS: Deferred Structural Elucidation Analysis for Molecular Simulations"
