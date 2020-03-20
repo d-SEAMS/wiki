@@ -28,8 +28,7 @@ If you use this software please cite the following paper:
 ??? info "Bibtex Entry"
          @Article{Goswami2020,
          author={Goswami, Rohit and Goswami, Amrita and Singh, Jayant Kumar},
-         title={d-SEAMS: Deferred Structural Elucidation Analysis for Molecular
-         Simulations},
+         title={d-SEAMS: Deferred Structural Elucidation Analysis for Molecular Simulations},
          journal={Journal of Chemical Information and Modeling},
          year={2020},
          month={Mar},
