@@ -50,14 +50,24 @@ extra:
     # - type: "linkedin"
     #   link: "https://www.linkedin.com/in/HaoZeke"
 
-# Page tree
-# nav:
-#   - Index: index.md
-#   - Code Usage:
-#       - Lua: code/lua.md
-#   - Contributing: Contributing.md
-#   - Code of Conduct: Code_of_Conduct.md
-#   - License: license.md
+nav:
+  - Home: index.md
+  - Examples:
+      - CHILL+: examples/chillPlus.md
+      - Bulk cages: examples/bulkTopologicalCriterion.md
+      - Ice nanotube: examples/iceNanotube.md
+      - Monolayer: examples/monolayer.md
+      - In-plane RDF: examples/rdf2d.md
+  - Lua:
+      - Compiled registrations: lua/functions.md
+      - Lua references: lua/references.md
+  - Process:
+      - Contributing: 02_Contributing.md
+      - Code of Conduct: 01_Code_of_Conduct.md
+      - Writing docs: 00_docWriting.md
+      - License: 03_license.md
+      - SQM plan: SQM Plan/index.md
+      - Style guide: SQM Plan/00_styleGuide.md
 
 markdown_extensions:
   - pymdownx.arithmatex
