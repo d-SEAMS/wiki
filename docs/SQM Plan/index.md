@@ -1,35 +1,46 @@
 # Software Quality Management Plan
 
-This section of the wiki is meant for users who wish to gain familiarity with
-the code-base and who will eventually be contributing to the project. The
-details described here are not set in stone, however, adherence to the ideals
-presented in this section will make a PR much more attractive.
+This is the **2020 Software Quality Management course artifact**. Keep
+it as process history. It is not the 2.x contributor handbook.
 
-## Repository details
+Live contribution:
 
-- The entire code and development is conducted publicly on GitHub
-  - The C++ engine [is here](https://github.com/d-SEAMS/seams-core) (or in the upper right)
-  - The wiki itself can be edited (by the pencil icon) [or here](https://github.com/d-SEAMS/wiki)
-- Feel free to reach out to the core-developers to help with features being
-  worked on
+- Engine: [seams-core](https://github.com/d-SEAMS/seams-core) (`CONTRIBUTING.md`, pixi + meson, Catch2)
+- Python: [PydSEAMSlib](https://github.com/d-SEAMS/PydSEAMSlib)
+- Lua/Fennel: [yodaStruct](https://github.com/d-SEAMS/yodaStruct) (`require("dseams")`)
+- This wiki: [d-SEAMS/wiki](https://github.com/d-SEAMS/wiki)
+
+The 2020 product was one `yodaStruct` binary, YAML plus Lua, CMake or
+the old Nix derivation. 2.x is `libyodaLib` plus `seams` / `pydseams` /
+`require("dseams")`. Runtime knobs are twelve-factor (`SEAMS_CONFIG` /
+`seams.env`). There is no `yodaStruct -c` / `conf.yaml` driver.
+
+## Repository details (2020 text, still true in spirit)
+
+- Development is public on GitHub
+- The C++ engine [is here](https://github.com/d-SEAMS/seams-core)
+- The wiki is [here](https://github.com/d-SEAMS/wiki)
 
 ## Style Guide
 
-???+ info "Diversity"
-    - The d-SEAMS ecosystem consists of a C++ back-end
-    - This is supplemented by a front-end in Lua
-    - Initial configuration is through a YAML input
-    - It is built with Nix (and CMake)
-    - The visualization is effected often through `python` interfaces to OVITO
+The 2020 diversity note listed a C++ back-end, a Lua front-end, YAML
+input, Nix+CMake, and OVITO. That mix is what the
+[style guide](00_styleGuide) was written for.
 
-Hence a separate section for dealing with the various styles and how
-they tie into each other [is here](00_styleGuide).
+What still applies: `clang-format`, namespaces, Catch2, Doxygen with
+formulae and citations, public PRs.
 
+What does not: YAML as the engine config, CMake as the live build,
+"every C++ function must have a Lua binding", `yaml-cpp` / `cxxopts`
+as engine dependencies.
 
 ### Docs
 
-- The basic premise is that the documentation serves as a **single source of
-  truth**. The [Gitlab
+- Documentation is the single source of truth. The [GitLab
   style-guide](https://docs.gitlab.com/ee/development/documentation/styleguide.html)
-  on documentation and collaboration is an excellent starting point.
-- Every change should be documented, along with the rationale behind the change
+  is still a good starting point.
+- Every change should be documented, along with the rationale.
+
+The live books are Diataxis: [docs.dseams.info](https://docs.dseams.info),
+[pydseams](https://d-seams.github.io/PydSEAMSlib/),
+[dseams](https://d-seams.github.io/yodaStruct/).
