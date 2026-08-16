@@ -1,4 +1,9 @@
-# Lua Function Documentation
-!!! note
-    For context, check [the developer docs](https://docs.dseams.info/md_markdown_luafunctions) where the API is documented in tandem
-    with the C++ functions.
+# Compiled Lua registrations
+
+The hand table `luaFunctions.md` is gone. The live list is Doxygen of
+`lua_api.hpp` on the yodaStruct book:
+
+[Compiled registrations](https://d-seams.github.io/yodaStruct/reference/lua-functions.html)
+
+Public helpers stay in `lua/dseams.lua` (`require("dseams")`).
+`require("yoda")` still resolves to that table.

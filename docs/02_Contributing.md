@@ -1,8 +1,11 @@
 # Contributing
 
 !!! note
-    This covers contributing to the main code. For adding to the documentation
-    see the **Writing Docs** section.
+    Engine patches go to [seams-core](https://github.com/d-SEAMS/seams-core).
+    Python is [PydSEAMSlib](https://github.com/d-SEAMS/PydSEAMSlib).
+    Lua/Fennel is [yodaStruct](https://github.com/d-SEAMS/yodaStruct).
+    This wiki is [d-SEAMS/wiki](https://github.com/d-SEAMS/wiki).
+    Doc prose in a book: see **Writing Docs**.
 
 We love pull requests from everyone. By participating in this project, you
 agree to abide by the contributor coventant suggested [code of conduct].
