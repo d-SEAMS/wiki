@@ -21,8 +21,10 @@ guess it.
 
 ## Lua
 
-1.x scripts: `example_lua/monolayer/` in
-[yodaStruct](https://github.com/d-SEAMS/yodaStruct).
+The library call is `require("dseams")` plus
+`dseams.core.ringAnalysis`. The 1.x scripts under
+`example_lua/monolayer/` still use the 2020 globals; rewrite them.
+Do not run `yodaStruct -c`.
 
 Howto: [confined ice](https://docs.dseams.info/howto/confined-ice.html).
 

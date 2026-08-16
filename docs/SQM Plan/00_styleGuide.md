@@ -1,9 +1,11 @@
 # Style Guide
 
 This page is the 2020 SQM style note. Read it as history of how the
-single-binary product was formatted. The live build is pixi + meson
-(or the Nix flake). The live languages are C++ in seams-core, Python
-in PydSEAMSlib, and Lua/Fennel in yodaStruct.
+single-binary product was formatted. It is not the 2.x contributor
+handbook. Live commit style is Conventional Commits in seams-core
+`CONTRIBUTING.md`. The live build is pixi + meson (or the Nix
+flake). The live languages are C++ in seams-core, Python in
+PydSEAMSlib, and Lua/Fennel in yodaStruct.
 
 ## Code formatting (still current)
 

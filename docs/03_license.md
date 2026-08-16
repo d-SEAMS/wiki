@@ -1,5 +1,14 @@
 # License
 
+The software (seams-core, PydSEAMSlib, yodaStruct, linkcell) is
+[MIT](https://github.com/d-SEAMS/seams-core/blob/main/LICENSE).
+This wiki repository also declares MIT in `pyproject.toml`.
+
+The text below is the 2020 GNU Free Documentation License 1.3
+notice that shipped with the original wiki document. It is kept as
+the historical documentation license, not as the license of the
+engine.
+
 ### GNU Free Documentation License
 
 Version 1.3, 3 November 2008

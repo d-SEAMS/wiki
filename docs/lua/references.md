@@ -1,5 +1,11 @@
-# Lua References
-This section consists of some useful references for Lua.
+# Lua references
 
-!!! note
-    The best resource is still [the official lua site](https://lua.org)
+The live d-SEAMS Lua surface is `require("dseams")` in
+[yodaStruct](https://d-seams.github.io/yodaStruct/):
+
+- [Public helpers](https://d-seams.github.io/yodaStruct/reference/lua.html)
+- [Compiled registrations](https://d-seams.github.io/yodaStruct/reference/lua-functions.html)
+- [Fennel](https://d-seams.github.io/yodaStruct/howto/fennel.html)
+
+The language manual is [lua.org](https://www.lua.org/). This
+repository builds against Lua 5.3 or 5.4.
