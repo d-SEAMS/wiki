@@ -66,8 +66,8 @@ nav:
       - Code of Conduct: 01_Code_of_Conduct.md
       - Writing docs: 00_docWriting.md
       - License: 03_license.md
-      - SQM plan: SQM Plan/index.md
-      - Style guide: SQM Plan/00_styleGuide.md
+      - SQM plan: "SQM Plan/index.md"
+      - Style guide: "SQM Plan/00_styleGuide.md"
 
 markdown_extensions:
   - pymdownx.arithmatex
