@@ -25,6 +25,6 @@ jobs:
         with:
           version: "0.12.5"
           enable-cache: true
-      - run: uv pip sync --system --require-hashes requirements.txt
-      - run: mkdocs build --strict --site-dir site
-      - run: python scripts/check-site-links.py site
+      - run: uv sync --locked --python python
+      - run: uv run --locked mkdocs build --strict --site-dir site
+      - run: uv run --locked python scripts/check-site-links.py site

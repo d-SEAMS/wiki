@@ -21,8 +21,8 @@ change.
 For this wiki, run:
 
 ```bash
-mkdocs build --strict --site-dir site
-python scripts/check-site-links.py site
+uv run --locked mkdocs build --strict --site-dir site
+uv run --locked python scripts/check-site-links.py site
 ```
 
 Include:
