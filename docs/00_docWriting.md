@@ -1,21 +1,34 @@
 # Wiki Updates
 
-- The easiest way to update the wiki is to just use the edit button and fork it
+Use the edit button on any page for small corrections, or clone
+`d-SEAMS/wiki` when changing several pages or the site configuration.
 
 ## Local
 
-- We [use poetry](https://python-poetry.org/) to manage our python dependencies
-- Simply follow the [instructions
-  here](https://rgoswami.me/posts/poetry-direnv/) after cloning the repository
-
-After that it is as simple as:
+Create an isolated Python environment and install the hashed dependency lock:
 
 ```bash
-poetry shell # if you didn't set up direnv
+python -m venv .venv
+. .venv/bin/activate
+python -m pip install --require-hashes -r requirements.txt
 mkdocs serve
+```
+
+Run the same checks as continuous integration before publishing a change:
+
+```bash
+mkdocs build --strict --site-dir site
+python scripts/check-site-links.py site
+```
+
+The direct dependencies live in `pyproject.toml`. Regenerate the universal
+lock after changing them:
+
+```bash
+uv pip compile pyproject.toml --universal --generate-hashes --upgrade -o requirements.txt
 ```
 
 ### Resources
 
-- Official mkdocs [documentation](https://www.mkdocs.org/user-guide/writing-your-docs/)
-- Material mkdocs [theme documentation](https://squidfunk.github.io/mkdocs-material/)
+- Official [MkDocs documentation](https://www.mkdocs.org/user-guide/writing-your-docs/)
+- [Material for MkDocs documentation](https://squidfunk.github.io/mkdocs-material/)

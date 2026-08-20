@@ -1,54 +1,39 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
 site_name: d-SEAMS Wiki
+site_description: Project guides, examples, and process notes for d-SEAMS
+site_author: d-SEAMS Core Team
 site_url: https://wiki.dseams.info
 theme:
-  name: "material"
-  language: "en"
+  name: material
+  language: en
   palette:
-    primary: "blue grey"
-    accent: "indigo"
+    primary: blue grey
+    accent: indigo
   font:
-    text: "Rubik"
-    code: "Ubuntu Mono"
-  logo: "images/logo.png"
-  favicon: "images/favicon.ico"
-  feature:
-    tabs: true
+    text: Rubik
+    code: Ubuntu Mono
+  logo: images/logo.png
+  favicon: images/favicon.ico
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.tabs
+    - navigation.path
+    - navigation.top
+    - navigation.footer
 
-repo_name: "d-SEAMS/seams-core"
-repo_url: "https://github.com/d-SEAMS/seams-core"
-# Disable edits here
-edit_uri: "https://github.com/d-SEAMS/wiki/edit/master/docs/"
+repo_name: d-SEAMS/wiki
+repo_url: https://github.com/d-SEAMS/wiki
+edit_uri: edit/master/docs/
 
-# Feature flags for functionality that alters behavior significantly, and thus
-# may be a matter of taste
-# feature:
-# Another layer on top of the main navigation for larger screens in the form
-# of tabs, especially useful for larger documentation projects
-# tabs: true
-
-# Material includes the search in the header as a partial, not as a separate
-# template, so it's correct that search.html is missing
-include_search_page: false
-
-# Material doesn't use MkDocs search functionality but provides its own. For
-# this reason, only the search index needs to be built
-search_index_only: true
-
-# Copyright
-copyright: 'Copyright &copy; 2019 -- present d-SEAMS Core Team. Analytics by <a href="https://antics.turtletech.us/" target="_blank" rel="noopener noreferrer">Antics</a>, provided by <a href="https://turtletech.us/" target="_blank" rel="noopener noreferrer">TurtleTech ehf</a>.'
-
-# google_analytics:
-#   - "UA-109503488-15"
-#   - "auto"
+copyright: Copyright &copy; 2019 d-SEAMS Core Team
 
 extra:
   social:
-    - type: "github"
-      link: "https://github.com/d-SEAMS"
-    # - type: "twitter"
-    #   link: "https://twitter.com/rg0swami"
-    # - type: "linkedin"
-    #   link: "https://www.linkedin.com/in/HaoZeke"
+    - icon: fontawesome/brands/github
+      link: https://github.com/d-SEAMS
+      name: d-SEAMS on GitHub
 
 nav:
   - Home: index.md
@@ -70,15 +55,17 @@ nav:
       - Style guide: "SQM Plan/00_styleGuide.md"
 
 markdown_extensions:
-  - pymdownx.arithmatex
+  - admonition
+  - attr_list
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
-      emoji_index: !!python/name:pymdownx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -87,17 +74,10 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
-  - codehilite
   - toc:
       permalink: true
-  - admonition
 
 plugins:
   - search
   - minify:
       minify_html: true
-
-extra_javascript:
-  - "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"
-  - "https://antics-api.turtletech.us/antics.js"
-  - javascripts/antics-outbound.js
