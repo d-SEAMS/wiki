@@ -8,9 +8,9 @@ Use the edit button on any page for small corrections, or clone
 Create an isolated Python environment and install the hashed dependency lock:
 
 ```bash
-python -m venv .venv
+uv venv
 . .venv/bin/activate
-python -m pip install --require-hashes -r requirements.txt
+uv pip sync --require-hashes requirements.txt
 mkdocs serve
 ```
 
