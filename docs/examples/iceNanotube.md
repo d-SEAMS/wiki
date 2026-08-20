@@ -18,10 +18,11 @@ frame.find_prisms(output_dir="output/")
 
 ## Lua
 
-The 1.x scripts live under `example_lua/iceNanotube/` in
-[yodaStruct](https://github.com/d-SEAMS/yodaStruct). The library call
-is `require("dseams")` plus the prism helper in that tree, not
-`yodaStruct -c`.
+`require("dseams")` does not expose the output-writing prism analysis as a
+stable helper. The 1.x scripts under `example_lua/iceNanotube/` depend on
+CLI-injected globals. Use `Frame.find_prisms` for the supported library
+workflow; low-level Lua registrations are documented in the
+[yodaStruct book](https://d-seams.github.io/yodaStruct/reference/lua-functions.html).
 
 Howto: [confined ice](https://docs.dseams.info/howto/confined-ice.html).
 

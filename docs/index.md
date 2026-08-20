@@ -17,15 +17,31 @@ Records: [Zenodo community](https://zenodo.org/communities/d-seams/).
 ## Examples
 
 These are the five 1.x figshare demonstrations, rewritten for 2.x.
-`seams` covers bulk CHILL+ and cages. Nanotube prisms, monolayer
-rings, and the in-plane RDF go through `pydseams` or
-`require("dseams")`. The 2020 YAML / `yodaStruct -c` driver is gone.
+`seams` covers bulk CHILL+ and cages. `pydseams` provides the
+output-writing prism, monolayer-ring, and in-plane RDF workflows.
+The Lua library exposes the shared analysis surface through
+`require("dseams")`; specialized 2D output remains a low-level
+registration. The 2020 YAML / `yodaStruct -c` driver is gone.
 
 - [CHILL+ on a cubic lattice](examples/chillPlus.md)
 - [Bulk HC / DDC cages](examples/bulkTopologicalCriterion.md)
 - [Ice nanotube prisms](examples/iceNanotube.md)
 - [Monolayer square ice](examples/monolayer.md)
 - [In-plane RDF](examples/rdf2d.md)
+
+## Python and Lua libraries
+
+The Python distribution is `pydseamslib` and its import is `pydseams`.
+The Lua module is `require("dseams")`; `require("yoda")` is a compatibility
+alias. Both libraries call the native engine and expose trajectory reading,
+CHILL/CHILL+, cages, radial distributions, coordination numbers,
+hydrogen bonds, density profiles, ionic pairs, and domain statistics.
+
+Use the generated books for the exact contracts:
+
+- [Python `Frame` and native API](https://d-seams.github.io/PydSEAMSlib/reference/python.html)
+- [Lua helpers](https://d-seams.github.io/yodaStruct/reference/lua.html)
+- [Lua compiled registrations](https://d-seams.github.io/yodaStruct/reference/lua-functions.html)
 
 ## Process
 

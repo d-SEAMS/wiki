@@ -20,9 +20,20 @@ r, g = frame.rdf_2d(output_dir="output/", cutoff=12.0, binwidth=0.05)
 
 ## Lua
 
-Compiled name: `dseams.core.calcRDF`. There is no
-`require("dseams")` RDF helper. The 1.x scripts under
-`example_lua/rdf2D-example/` still use the 2020 globals.
+`dseams.rdf` returns a partial three-dimensional RDF and is not the
+in-plane calculation shown here:
+
+```lua
+local dseams = require("dseams")
+local cloud = dseams.read("dump-320.lammpstrj", {type = 2})
+local result = dseams.rdf(cloud, {type_i = 2, type_j = 2,
+                                  cutoff = 12.0, bins = 240})
+print(result.r[1], result.g[1])
+```
+
+The in-plane output writer is the low-level registration
+`dseams.core.calcRDF`. Its 1.x script depends on a CLI-injected accumulator,
+so `Frame.rdf_2d` is the supported library workflow for this demonstration.
 
 ## References
 

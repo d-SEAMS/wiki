@@ -21,10 +21,10 @@ guess it.
 
 ## Lua
 
-The library call is `require("dseams")` plus
-`dseams.core.ringAnalysis`. The 1.x scripts under
-`example_lua/monolayer/` still use the 2020 globals; rewrite them.
-Do not run `yodaStruct -c`.
+`dseams.core.ringAnalysis` is a low-level compiled registration, not a
+high-level `require("dseams")` helper. The 1.x scripts under
+`example_lua/monolayer/` depend on CLI-injected globals. Use
+`Frame.monolayer_rings` for the supported library workflow.
 
 Howto: [confined ice](https://docs.dseams.info/howto/confined-ice.html).
 
