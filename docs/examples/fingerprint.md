@@ -55,8 +55,8 @@ print(both.matched, both.depth[:8])
 nauty, else `"wl"`). `topology_library` adds this frame's keys under a
 label. `classify_topology` names every analysed atom; unmatched atoms
 carry `""`. Given a sequence of libraries at different hop counts it
-names each atom by the deepest that knows it and `depth` records which
-one did (`0` when none).
+names each atom by the deepest that knows it. `depth` is the hops of
+the library that named the atom (`0` when none).
 
 ## Lua
 

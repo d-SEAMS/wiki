@@ -16,15 +16,17 @@ PRINT ARG=ice.nice,ice.nmax,ice.nic,ice.nih,ice.chillice,ice.chillmax STRIDE=100
 COMMITTOR ARG=ice.nmax STRIDE=100 BASIN_LL1=0 BASIN_UL1=20 BASIN_LL2=800 BASIN_UL2=100000
 brine: DSEAMS_CAGES ATOMS=1-3000 IONS=3001-3060 ION_CUTOFF=3.5 COMPLETE
 PRINT ARG=brine.nice,brine.nmax,brine.nionice,brine.nionfront,brine.nionliq STRIDE=500 FILE=BRINE
-hyd: DSEAMS_CAGES ATOMS=1-2944 LIBRARY=sI_sII.keys HOPS=3
+hyd: DSEAMS_CAGES ATOMS=1-2944 LIBRARY=sI_sII.keys,sI_sII_h2.keys HOPS=3
 PRINT ARG=hyd.nnamed,hyd.nclasses STRIDE=500 FILE=HYDRATE
 ```
 
-`ATOMS` names the oxygen atoms. `IONS` are read against the water
-assignment and are not part of the graph. `LIBRARY` is a topology key
-library from `seams fingerprint --emit-library`; `HOPS` must match the
-library. `COMPLETE` fills the last vertex of six-rings whose other
-vertices carry a label.
+That `DSEAMS_CAGES` block names oxygen with `ATOMS`. `IONS` stay off
+the graph and are read against the water assignment. `LIBRARY` is one
+topology key library from `seams fingerprint --emit-library`, or two
+or more files, comma separated, built at different hop counts; each
+molecule takes the deepest library that names its key. The deepest
+file must match `HOPS`. `COMPLETE` fills the last vertex of six-rings
+whose other vertices carry a label.
 
 Components include `nice`, `nmax`, `nclus`, `nic`, `nih`, `nmixed`,
 `chillice`, `chillmax`, `chillinterfacial`, `sixrings`, `nionice`,

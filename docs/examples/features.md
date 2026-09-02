@@ -17,11 +17,11 @@ X, S = feat.transform()
 print(feat.feature_names)
 ```
 
-`X` lists cage counts (`n_ice`, `n_ic`, `n_ih`, `n_mixed`), the
-largest connected cage cluster `n_max` and the cluster count, the
-cubicity, the `chill_plus` counts on the cutoff graph, the largest
-`chill_plus` bulk cluster, and the six-ring count. `S` lists
-`STATE_WATER`, `STATE_IC`, `STATE_IH`, or `STATE_MIXED` per molecule.
+`X` follows `feat.feature_names`: `n_ice`, `n_max`, `n_clusters`,
+`n_ic`, `n_ih`, `n_mixed`, cubicity, the `chill_plus` counts on the
+cutoff graph, the largest `chill_plus` bulk cluster, and the six-ring
+count. `X[:, 1]` is `n_max`. `S` lists `STATE_WATER`, `STATE_IC`,
+`STATE_IH`, or `STATE_MIXED` per molecule.
 
 Pass `ion_types` to append `n_ion_ice`, `n_ion_front`, `n_ion_liquid`
 and the mean shell ice fraction.
