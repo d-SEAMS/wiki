@@ -16,9 +16,10 @@ seams --features
 seams read FILE
 seams chill FILE
 seams chill-plus FILE
-seams cages FILE [--graph seeded --complete]
-seams fingerprint FILE [--hops N --library FILE[,FILE...] --emit-library LABEL --colour-types]
-seams ions FILE --ion-types I,J [--ion-cutoff ANGSTROM]
+seams cages FILE [--graph seeded --complete --per-atom OUT]
+seams cages FILE --signature SPEC [--guest-types T,U --guest-radius R]
+seams fingerprint FILE [--hops N --library FILE[,FILE...] --emit-library LABEL --colour-types --per-atom OUT]
+seams ions FILE --ion-types I,J [--ion-cutoff ANGSTROM --per-atom OUT]
 seams rdf FILE [--types I,J --cutoff ANGSTROM --bins N]
 seams cn FILE [--types I,J --cutoff ANGSTROM]
 seams hbonds FILE [--type I --htype I --hdist ANGSTROM --hangle DEG --donors]
