@@ -61,7 +61,7 @@ as vertex index lists, by the nearest periodic cage centroid within a
 radius, and reports occupied, multiply occupied and free:
 
 ```python
-cages = [c.vertices for c in frame.cages_by_signature("512")]
+cages = [c["vertices"] for c in frame.cages_by_signature("512")]
 occ = frame.guest_occupancy(cages, guest_types=(2,), radius=4.0)
 print(occ.occupied, occ.multiply, occ.free)
 ```
