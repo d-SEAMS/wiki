@@ -12,16 +12,19 @@ seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2
 seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --colour-types
 seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --emit-library Ic > ic.keys
 seams fingerprint hydrate.lammpstrj --type 2 --hops 3 --library ic.keys
+seams fingerprint hydrate.lammpstrj --type 2 --hops 3 --library ic3.keys,ic2.keys
 ```
 
 `--hops` is the number of bonds from the centre in each local key
 (default 2). `--colour-types` colours vertices by LAMMPS type so
 species never match across types. `--emit-library LABEL` prints the
 frame's distinct keys as library lines under `LABEL`. `--library FILE`
-is one library file. A comma in that path is a missing file, not a
-list. Python `classify_topology` and Lua `dseams.classify_topology`
-take a sequence of libraries at different hop counts. `DSEAMS_CAGES`
-`LIBRARY` accepts comma-separated files. The CLI does not.
+names atoms from one library. A comma-separated list of files, each
+built at a different hop count, names each atom by the deepest
+matching library and prints the per-depth counts. Python
+`classify_topology` and Lua `dseams.classify_topology` take a sequence
+of the same libraries. `DSEAMS_CAGES` `LIBRARY` uses the same
+comma-separated form.
 
 The bond graph follows `--graph`. `seeded` is two graphs, so the
 fingerprint falls back to the cutoff list. Use `--graph knn` or

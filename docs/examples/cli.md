@@ -17,7 +17,7 @@ seams read FILE
 seams chill FILE
 seams chill-plus FILE
 seams cages FILE [--graph seeded --complete]
-seams fingerprint FILE [--hops N --library FILE --emit-library LABEL --colour-types]
+seams fingerprint FILE [--hops N --library FILE[,FILE...] --emit-library LABEL --colour-types]
 seams ions FILE --ion-types I,J [--ion-cutoff ANGSTROM]
 seams rdf FILE [--types I,J --cutoff ANGSTROM --bins N]
 seams cn FILE [--types I,J --cutoff ANGSTROM]
