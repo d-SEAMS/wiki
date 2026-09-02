@@ -44,10 +44,11 @@ six-rings. `IceFeaturizer` turns ring-adjacent completion on by default.
 ```lua
 local dseams = require("dseams")
 local cloud = dseams.read("nucleation.lammpstrj", {type = 2})
-print(dseams.cages(cloud, {complete = true}))
+print(dseams.cages(cloud, {type = 2, complete = true}))
 ```
 
 `dseams.cages` always uses the seeded pair of k-nearest graphs.
+`type` is the water LAMMPS type (default 1) and must match the cloud.
 `complete` fills the last vertex of a six-ring whose other vertices
 carry a label.
 
