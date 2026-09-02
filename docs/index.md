@@ -34,6 +34,7 @@ call `Frame.from_file` for LAMMPS dumps.
 - [Topology fingerprint](examples/fingerprint.md)
 - [Ions against cages](examples/ions.md)
 - [Ice features](examples/features.md)
+- [Visualise labels](examples/visualise.md)
 - [PLUMED DSEAMS_CAGES](examples/plumed.md)
 - [Ice nanotube prisms](examples/iceNanotube.md)
 - [Monolayer square ice](examples/monolayer.md)
