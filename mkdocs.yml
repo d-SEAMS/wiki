@@ -44,6 +44,7 @@ nav:
       - Fingerprint: examples/fingerprint.md
       - Ions: examples/ions.md
       - Ice features: examples/features.md
+      - Visualise labels: examples/visualise.md
       - PLUMED: examples/plumed.md
       - Ice nanotube: examples/iceNanotube.md
       - Monolayer: examples/monolayer.md
