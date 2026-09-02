@@ -5,16 +5,20 @@ Figshare:
 (`dump-240-square.lammpstrj`, 750 TIP4P/2005 waters in a smooth (13,0)
 tube at 240 K). Tetragonal prism blocks.
 
-The `seams` CLI has no prism command. Use a front end.
+The `seams` CLI has no prism command. `Frame.find_prisms` writes the
+engine prism analysis under `output_dir`.
 
 ## Python
 
 ```python
-import pydseams as ds
+from pydseams import Frame
 
-frame = ds.read("dump-240-square.lammpstrj")
+frame = Frame.from_file("dump-240-square.lammpstrj")
 frame.find_prisms(output_dir="output/")
 ```
+
+`max_depth` (default 6) is the largest ring size. `shape_matching=True`
+turns on topological unit matching inside the prism search.
 
 ## Lua
 

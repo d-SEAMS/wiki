@@ -12,20 +12,34 @@ Use `seams`, `pydseams`, or `require("dseams")`.
 ## CLI
 
 ```bash
+seams read mW_cubic.lammpstrj --type 1
+seams chill mW_cubic.lammpstrj --cutoff 3.5 --type 1
 seams chill-plus mW_cubic.lammpstrj --cutoff 3.5 --type 1
 ```
 
 Counts print to stdout (`cubic`, `hexagonal`, `water`,
 `interfacial`, `clathrate`, `interClathrate`, `reCubic`, `reHex`,
-`unclassified`).
+`unclassified`). `chill_plus` is an accepted alias of `chill-plus`.
 
 ## Python
 
-```python
-import pydseams as ds
+`ds.read` is a suffix-dispatch alias of `Frame.from_file` for LAMMPS
+dumps. New examples use the constructor.
 
-frame = ds.read("mW_cubic.lammpstrj")
+```python
+from pydseams import Frame
+
+frame = Frame.from_file("mW_cubic.lammpstrj", atom_type=1)
 print(frame.chill_plus())
+```
+
+ASE and raw arrays use the other constructors:
+
+```python
+from pydseams import Frame
+
+frame = Frame.from_ase(atoms)                 # default select="O"
+frame = Frame.from_arrays(positions, cell, numbers=[1, 1, 1, 1])
 ```
 
 ## Lua

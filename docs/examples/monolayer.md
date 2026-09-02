@@ -5,24 +5,25 @@ Figshare:
 (`dump-6-320-310.lammpstrj`, fMSI on cooling 320 K to 310 K).
 Four-membered primitive rings.
 
-The `seams` CLI has no monolayer command. Use a front end.
+The `seams` CLI has no monolayer command. `Frame.monolayer_rings` writes
+`polygonRingAnalysis` output and reads coverage back.
 
 ## Python
 
 ```python
-import pydseams as ds
+from pydseams import Frame
 
-frame = ds.read("dump-6-320-310.lammpstrj")
-frame.monolayer_rings(output_dir="output/", sheet_area=1.0)
+frame = Frame.from_file("dump-6-320-310.lammpstrj")
+print(frame.monolayer_rings(output_dir="output/", sheet_area=1.0))
 ```
 
 Pass the sheet area for the system you downloaded. The engine does not
-guess it.
+guess it. `max_depth` defaults to 4.
 
 ## Lua
 
-`dseams.core.ringAnalysis` is a low-level compiled registration, not a
-high-level `require("dseams")` helper. The 1.x scripts under
+`dseams.core.ringAnalysis` is a compiled registration, not a
+`require("dseams")` helper. The 1.x scripts under
 `example_lua/monolayer/` depend on CLI-injected globals. Use
 `Frame.monolayer_rings` for the supported library workflow.
 

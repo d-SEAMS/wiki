@@ -10,29 +10,46 @@ double-diamond cages (DDC), and mixed rings sit on the ice cluster.
 
 ## CLI
 
+`--graph` defaults to `seeded`. `--complete` turns on ring-adjacent
+completion of that seeded assignment.
+
 ```bash
-seams cages nucleation.lammpstrj --type 2
+seams cages nucleation.lammpstrj --type 2 --graph seeded --complete
 ```
 
-Add `--graph knn` / `knn-union` / `seeded` when the bond graph is not
-the cutoff list.
+Other bond graphs: `--graph cutoff`, `--graph knn`, `--graph knn-union`.
+`-k` (default 4) applies to `knn`, `knn-union`, and `seeded`.
+
+Stdout is `nop N graph KIND hexagonal IH cubic IC water W`. Hexagonal
+is HC (Ih), cubic is DDC (Ic), water is neither.
 
 ## Python
 
-```python
-import pydseams as ds
+`Frame.cages` defaults to the seeded construction. `ring_adjacent=True`
+is the same completion as `--complete`.
 
-frame = ds.read("nucleation.lammpstrj")
-print(frame.cages())
+```python
+from pydseams import Frame
+
+frame = Frame.from_file("nucleation.lammpstrj", atom_type=2)
+print(frame.cages(ring_adjacent=True))
+print(frame.seeded_affiliation(ring_adjacent=True))
 ```
+
+`cages(seeded=False)` is cutoff-graph affiliation on this frame's
+six-rings. `IceFeaturizer` turns ring-adjacent completion on by default.
 
 ## Lua
 
 ```lua
 local dseams = require("dseams")
 local cloud = dseams.read("nucleation.lammpstrj", {type = 2})
-print(dseams.cages(cloud))
+print(dseams.cages(cloud, {complete = true}))
 ```
+
+`dseams.cages` always uses the seeded pair of k-nearest graphs.
+`complete` fills the last vertex of a six-ring whose other vertices
+carry a label.
 
 Books: [seams cages](https://docs.dseams.info/tutorials/bulk-ice.html),
 [pydseams](https://d-seams.github.io/PydSEAMSlib/tutorials/classify-ice.html).

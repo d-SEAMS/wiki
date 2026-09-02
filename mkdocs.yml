@@ -38,8 +38,13 @@ extra:
 nav:
   - Home: index.md
   - Examples:
+      - seams CLI: examples/cli.md
       - CHILL+: examples/chillPlus.md
       - Bulk cages: examples/bulkTopologicalCriterion.md
+      - Fingerprint: examples/fingerprint.md
+      - Ions: examples/ions.md
+      - Ice features: examples/features.md
+      - PLUMED: examples/plumed.md
       - Ice nanotube: examples/iceNanotube.md
       - Monolayer: examples/monolayer.md
       - In-plane RDF: examples/rdf2d.md

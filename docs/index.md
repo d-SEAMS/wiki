@@ -6,6 +6,7 @@ Process, worked examples, and the 2020 SQM notes. The product page is
 - Engine and `seams` CLI: [docs.dseams.info](https://docs.dseams.info)
 - Python `Frame`: [pydseams](https://d-seams.github.io/PydSEAMSlib/)
 - Lua `require("dseams")`: [yodaStruct](https://d-seams.github.io/yodaStruct/)
+- PLUMED action: [dseams-plumed](https://github.com/HaoZeke/dseams-plumed)
 
 Cite the 2020 paper (DOI
 [10.1021/acs.jcim.0c00031](https://doi.org/10.1021/acs.jcim.0c00031),
@@ -16,15 +17,24 @@ Records: [Zenodo community](https://zenodo.org/communities/d-seams/).
 
 ## Examples
 
-These are the five 1.x figshare demonstrations, rewritten for 2.x.
-`seams` covers bulk CHILL+ and cages. `pydseams` provides the
-output-writing prism, monolayer-ring, and in-plane RDF workflows.
-The Lua library exposes the shared analysis surface through
-`require("dseams")`; specialized 2D output remains a low-level
-registration. The 2020 YAML / `yodaStruct -c` driver is gone.
+These pages use the 2.7 public API. `seams` covers `read`, `chill`,
+`chill-plus`, `cages --graph seeded --complete`, `fingerprint`,
+`ions`, `rdf`, `cn`, `hbonds`, `pairs`, `density-z`, and `domains`.
+`pydseams` adds `Frame.from_file` / `from_ase` / `from_arrays`,
+`fingerprint`, `ion_environment`, and `IceFeaturizer`. Lua is
+`require("dseams")`. Collective variables use `DSEAMS_CAGES`.
+The 2020 YAML / `yodaStruct -c` driver is gone.
 
+`ds.read` remains a documented suffix-dispatch alias; new examples
+call `Frame.from_file` for LAMMPS dumps.
+
+- [seams CLI](examples/cli.md)
 - [CHILL+ on a cubic lattice](examples/chillPlus.md)
 - [Bulk HC / DDC cages](examples/bulkTopologicalCriterion.md)
+- [Topology fingerprint](examples/fingerprint.md)
+- [Ions against cages](examples/ions.md)
+- [Ice features](examples/features.md)
+- [PLUMED DSEAMS_CAGES](examples/plumed.md)
 - [Ice nanotube prisms](examples/iceNanotube.md)
 - [Monolayer square ice](examples/monolayer.md)
 - [In-plane RDF](examples/rdf2d.md)
@@ -34,10 +44,11 @@ registration. The 2020 YAML / `yodaStruct -c` driver is gone.
 The Python distribution is `pydseamslib` and its import is `pydseams`.
 The Lua module is `require("dseams")`; `require("yoda")` is a compatibility
 alias. Both libraries call the native engine and expose trajectory reading,
-CHILL/CHILL+, cages, radial distributions, coordination numbers,
-hydrogen bonds, density profiles, ionic pairs, and domain statistics.
+CHILL/CHILL+, cages, fingerprints, ion environments, radial distributions,
+coordination numbers, hydrogen bonds, density profiles, ionic pairs, and
+domain statistics.
 
-Use the generated books for the exact contracts:
+Use the generated books for the live names:
 
 - [Python `Frame` and native API](https://d-seams.github.io/PydSEAMSlib/reference/python.html)
 - [Lua helpers](https://d-seams.github.io/yodaStruct/reference/lua.html)
