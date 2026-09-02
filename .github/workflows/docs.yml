@@ -28,3 +28,7 @@ jobs:
       - run: uv sync --locked --python python
       - run: uv run --locked mkdocs build --strict --site-dir site
       - run: uv run --locked python scripts/check-site-links.py site
+      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          args: --config lychee.toml --no-progress docs README.md
+          fail: true

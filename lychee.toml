@@ -1,0 +1,19 @@
+# External link checker for the wiki markdown.
+# Local fragments stay on scripts/check-site-links.py after a strict build.
+#
+# Allowlist only third-party targets this tree cannot repair:
+# - figshare returns 202 for live article and project pages
+# - ACS doi.org / pubs.acs.org serve 403 to automated clients
+# - fsf.org fails the checker TLS handshake; the GNU FDL text still cites it
+
+max_redirects = 10
+timeout = 20
+accept = ["200..=299", "202", "429"]
+user_agent = "d-SEAMS wiki link check"
+exclude_path = ["site", ".venv"]
+exclude = [
+  "doi.org",
+  "pubs.acs.org",
+  "pnas.org",
+  "fsf.org",
+]
