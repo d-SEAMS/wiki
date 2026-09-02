@@ -4,6 +4,7 @@
     Engine patches go to [seams-core](https://github.com/d-SEAMS/seams-core).
     Python is [PydSEAMSlib](https://github.com/d-SEAMS/PydSEAMSlib).
     Lua/Fennel is [yodaStruct](https://github.com/d-SEAMS/yodaStruct).
+    PLUMED is [dseams-plumed](https://github.com/HaoZeke/dseams-plumed).
     This wiki is [d-SEAMS/wiki](https://github.com/d-SEAMS/wiki).
     Doc prose in a book: see **Writing Docs**.
 
@@ -25,6 +26,7 @@ uv run --locked mkdocs build --strict --site-dir site
 uvx --with-requirements requirements.txt mkdocs build --strict --site-dir site
 uv run --locked python scripts/check-site-links.py site
 lychee --config lychee.toml README.md docs
+scripts/check-external-links.sh
 ```
 
 Include:

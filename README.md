@@ -24,6 +24,7 @@ uv run --locked mkdocs build --strict
 uvx --with-requirements requirements.txt mkdocs build --strict
 uv run --locked python scripts/check-site-links.py site
 lychee --config lychee.toml README.md docs
+scripts/check-external-links.sh
 ```
 
 ## License
