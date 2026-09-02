@@ -1,5 +1,8 @@
 # CHILL+ on a cubic lattice
 
+The four-neighbour ice classifier (CHILL) and CHILL+ are the
+Nguyen and Molinero scores.
+
 Figshare:
 [CHILL LAMMPS Trajectory](https://figshare.com/articles/CHILL_LAMMPS_Trajectory/11448720)
 (`mW_cubic.lammpstrj`, 4096 type-1 mW sites of ice Ic). CHILL+
@@ -15,6 +18,7 @@ Use `seams`, `pydseams`, or `require("dseams")`.
 seams chill-plus mW_cubic.lammpstrj --cutoff 3.5 --type 1
 ```
 
+`seams chill` is the four-neighbour CHILL score on the same dump.
 Counts print to stdout (`cubic`, `hexagonal`, `water`,
 `interfacial`, `clathrate`, `interClathrate`, `reCubic`, `reHex`,
 `unclassified`).
@@ -22,11 +26,14 @@ Counts print to stdout (`cubic`, `hexagonal`, `water`,
 ## Python
 
 ```python
-import pydseams as ds
+from pydseams import Frame
 
-frame = ds.read("mW_cubic.lammpstrj")
+frame = Frame.from_file("mW_cubic.lammpstrj")
 print(frame.chill_plus())
 ```
+
+`ds.read` is a suffix-dispatch alias of `Frame.from_file` for
+`.lammpstrj`. New examples use the constructor.
 
 ## Lua
 

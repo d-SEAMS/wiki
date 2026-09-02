@@ -4,13 +4,14 @@
     Engine patches go to [seams-core](https://github.com/d-SEAMS/seams-core).
     Python is [PydSEAMSlib](https://github.com/d-SEAMS/PydSEAMSlib).
     Lua/Fennel is [yodaStruct](https://github.com/d-SEAMS/yodaStruct).
+    PLUMED is [dseams-plumed](https://github.com/HaoZeke/dseams-plumed).
     This wiki is [d-SEAMS/wiki](https://github.com/d-SEAMS/wiki).
     Doc prose in a book: see **Writing Docs**.
 
-We love pull requests from everyone. By participating in this project, you
-agree to abide by the [code of conduct].
+Patches to those repositories start as pull requests. By participating
+you agree to abide by the [code of conduct].
 
-[code of conduct]: https://github.com/d-SEAMS/seams-core/blob/main/CODE_OF_CONDUCT.md
+[code of conduct]: https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
 
 Run the affected repository's tests and documentation checks. Explain the
 scientific or user-facing invariant that the change preserves.
@@ -22,7 +23,9 @@ For this wiki, run:
 
 ```bash
 uv run --locked mkdocs build --strict --site-dir site
+uvx --with-requirements requirements.txt mkdocs build --strict --site-dir site
 uv run --locked python scripts/check-site-links.py site
+lychee --config lychee.toml docs README.md
 ```
 
 Include:

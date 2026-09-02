@@ -38,11 +38,16 @@ extra:
 nav:
   - Home: index.md
   - Examples:
+      - seams CLI: examples/cli.md
       - CHILL+: examples/chillPlus.md
       - Bulk cages: examples/bulkTopologicalCriterion.md
       - Ice nanotube: examples/iceNanotube.md
       - Monolayer: examples/monolayer.md
       - In-plane RDF: examples/rdf2d.md
+      - Fingerprint: examples/fingerprint.md
+      - Ions: examples/ions.md
+      - Kinetic features: examples/features.md
+      - PLUMED: examples/plumed.md
   - Lua:
       - Compiled registrations: lua/functions.md
       - Lua references: lua/references.md

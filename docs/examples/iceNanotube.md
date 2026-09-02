@@ -5,23 +5,28 @@ Figshare:
 (`dump-240-square.lammpstrj`, 750 TIP4P/2005 waters in a smooth (13,0)
 tube at 240 K). Tetragonal prism blocks.
 
-The `seams` CLI has no prism command. Use a front end.
+The `seams` CLI has no prism command. `Frame.find_prisms` is the
+supported library workflow. It writes engine files under `output_dir`.
 
 ## Python
 
 ```python
-import pydseams as ds
+from pydseams import Frame
 
-frame = ds.read("dump-240-square.lammpstrj")
+frame = Frame.from_file("dump-240-square.lammpstrj")
 frame.find_prisms(output_dir="output/")
 ```
 
+`max_depth` (default 6) is the largest ring size. `shape_matching`
+turns on template-unit matching inside the prism search. Both
+arguments are optional.
+
 ## Lua
 
-`require("dseams")` does not expose the output-writing prism analysis as a
-stable helper. The 1.x scripts under `example_lua/iceNanotube/` depend on
-CLI-injected globals. Use `Frame.find_prisms` for the supported library
-workflow; low-level Lua registrations are documented in the
+`require("dseams")` does not expose the output-writing prism analysis as
+a stable helper. The 1.x scripts under `example_lua/iceNanotube/` depend
+on CLI-injected globals. Use `Frame.find_prisms` for this page.
+Low-level Lua registrations are documented in the
 [yodaStruct book](https://d-seams.github.io/yodaStruct/reference/lua-functions.html).
 
 Howto: [confined ice](https://docs.dseams.info/howto/confined-ice.html).

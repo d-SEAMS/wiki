@@ -1,4 +1,4 @@
-# Software Quality Management Plan
+# Software quality management plan
 
 This is the **2020 Software Quality Management course artifact**. Keep
 it as process history. It is not the 2.x contributor handbook.
@@ -13,9 +13,9 @@ Live contribution:
 The 2020 product was one `yodaStruct` binary, YAML plus Lua, CMake or
 the old Nix derivation. 2.x is `libyodaLib` plus `seams` / `pydseams` /
 `require("dseams")`. Runtime knobs are twelve-factor (`SEAMS_CONFIG` /
-`seams.env`). There is no `yodaStruct -c` / `conf.yaml` driver.
+`seams.env`). The 2.x tree has no `yodaStruct -c` / `conf.yaml` driver.
 
-## Repository details (2020 text, still true in spirit)
+## Repository details (2020 text, still accurate in spirit)
 
 - Development is public on GitHub
 - The C++ engine [is here](https://github.com/d-SEAMS/seams-core)
@@ -24,8 +24,8 @@ the old Nix derivation. 2.x is `libyodaLib` plus `seams` / `pydseams` /
 ## Style Guide
 
 The 2020 diversity note listed a C++ back-end, a Lua front-end, YAML
-input, Nix+CMake, and OVITO. That mix is what the
-[style guide](00_styleGuide) was written for.
+input, Nix+CMake, and the Open Visualization Tool (OVITO). That mix
+is what the [style guide](00_styleGuide.md) was written for.
 
 What still applies: `clang-format`, namespaces, Catch2, Doxygen with
 formulae and citations, public PRs.

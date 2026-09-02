@@ -9,12 +9,21 @@ MkDocs wiki for d-SEAMS, published at
 - Lua book: [yodaStruct](https://d-seams.github.io/yodaStruct/)
 - Engine source: [d-SEAMS/seams-core](https://github.com/d-SEAMS/seams-core)
 
-This tree holds process notes, the 2020 SQM course artifact
-(history), and the five figshare demonstrations rewritten for 2.x
-(`seams` / `pydseams` / `require("dseams")`).
+The wiki keeps process notes, the 2020 Software Quality Management
+course artifact (history), and the 2.7.0 workflow examples (`seams` /
+`pydseams` / `require("dseams")` / `DSEAMS_CAGES`).
+
+Build the site from the pinned lock or from `requirements.txt`:
+
+```bash
+uv run --locked mkdocs build --strict
+uvx --with-requirements requirements.txt mkdocs build --strict
+```
 
 ## License
 
-The software is MIT. This wiki declares MIT in `pyproject.toml`.
-The original wiki document also shipped GNU FDL 1.3; that text
-remains under `docs/03_license.md` as history.
+The software license is the Massachusetts Institute of Technology (MIT)
+License. This wiki declares that license in `pyproject.toml`. The
+original wiki document also carried the Free Software Foundation (GNU)
+Free Documentation License 1.3; that text remains under
+`docs/03_license.md` as history.
