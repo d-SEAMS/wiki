@@ -25,7 +25,7 @@ Run the same checks as continuous integration before publishing a change:
 ```bash
 uv run --locked mkdocs build --strict --site-dir site
 uv run --locked python scripts/check-site-links.py site
-lychee --config lychee.toml site
+lychee --config lychee.toml README.md docs
 ```
 
 The direct dependencies live in `pyproject.toml` and `requirements.txt`

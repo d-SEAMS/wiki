@@ -25,7 +25,7 @@ the old Nix derivation. 2.x is `libyodaLib` plus `seams` / `pydseams` /
 
 The 2020 diversity note listed a C++ back-end, a Lua front-end, YAML
 input, Nix+CMake, and OVITO. That mix is what the
-[style guide](00_styleGuide) was written for.
+[style guide](00_styleGuide.md) was written for.
 
 What still applies: `clang-format`, namespaces, Catch2, Doxygen with
 formulae and citations, public PRs.
