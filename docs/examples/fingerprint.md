@@ -12,18 +12,16 @@ seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2
 seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --colour-types
 seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --emit-library Ic > ic.keys
 seams fingerprint hydrate.lammpstrj --type 2 --hops 3 --library ic.keys
-seams fingerprint hydrate.lammpstrj --type 2 --hops 3 --library ic3.keys,ic2.keys
 ```
 
 `--hops` is the number of bonds from the centre in each local key
 (default 2). `--colour-types` colours vertices by LAMMPS type so
 species never match across types. `--emit-library LABEL` prints the
 frame's distinct keys as library lines under `LABEL`. `--library FILE`
-names atoms of a frame by that library. Several libraries, comma
-separated and built at different `--hops`, name each atom by the
-deepest library that holds its key, so an atom whose wide neighbourhood
-is disturbed still gets a name from its inner shells; the output adds
-the count named at each depth.
+names atoms of a frame by that one library. The CLI opens `FILE` as a
+single path; a comma is not a list. Sequence matching at two or more
+hop counts is `Frame.classify_topology` and `dseams.classify_topology`
+below, or `LIBRARY=a.keys,b.keys` on `DSEAMS_CAGES`.
 
 The bond graph follows `--graph`. `seeded` is two graphs, so the
 fingerprint falls back to the cutoff list. Use `--graph knn` or
@@ -55,8 +53,8 @@ print(both.matched, both.depth[:8])
 nauty, else `"wl"`). `topology_library` adds this frame's keys under a
 label. `classify_topology` names every analysed atom; unmatched atoms
 carry `""`. Given a sequence of libraries at different hop counts it
-names each atom by the deepest that knows it and `depth` records which
-one did (`0` when none).
+names each atom by the deepest that knows it. `depth` is the hops of
+the library that named the atom (`0` when none).
 
 ## Lua
 
