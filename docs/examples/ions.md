@@ -43,6 +43,35 @@ frame = Frame.from_ase(atoms, select=("O", "Na", "Cl"), bonded="cutoff")
 print(frame.ion_environment((11, 17)))
 ```
 
+The environment lists each ion's shell in `members`, and
+`hydration_shell_rings` counts the primitive rings of the water network
+that pass through each shell, by size. An ion is not a vertex of the
+network, so the rings it would have closed are gone; the census says
+how far the network survives around it:
+
+```python
+env, census = frame.hydration_shell_rings((3, 4))
+for ion, row in zip(env.ion, census):
+    print(ion, row[6], "six-rings through the shell")
+```
+
+Guests inside cages are a different question from ions at vertices.
+`guest_occupancy` places guests (methane, THF, an ion) in cages given
+as vertex index lists, by the nearest periodic cage centroid within a
+radius, and reports occupied, multiply occupied and free:
+
+```python
+cages = [c.vertices for c in frame.cages_by_signature("512")]
+occ = frame.guest_occupancy(cages, guest_types=(2,), radius=4.0)
+print(occ.occupied, occ.multiply, occ.free)
+```
+
+On the command line the same count follows the signature search:
+
+```bash
+seams cages hydrate.lammpstrj --type 1 --graph cutoff --signature 512 --guest-types 2 --guest-radius 4.0
+```
+
 `pydseams.features.ion_environment` takes per-molecule states from
 `IceFeaturizer` instead of calling `seeded_affiliation` itself.
 
@@ -73,6 +102,10 @@ print(env.nIce, env.nFront, env.nLiquid)
 
 `ion_environment` takes the cloud, a per-atom ice flag list, and a
 list of ion indices (0-based). `o.type` is the water type (default 1).
-`o.cutoff` is the first-shell radius (default 3.5).
+`o.cutoff` is the first-shell radius (default 3.5). `env.members[i]`
+lists ion `i`'s shell, and `dseams.shell_ring_census(rings,
+env.members[i], {max_ring = 6})` counts the rings through it by size.
+`dseams.guest_occupancy(cloud, cages, guests, {radius = 4.0})` places
+guests in cages given as vertex index lists.
 
 Book: [features how-to](https://d-seams.github.io/PydSEAMSlib/howto/features.html).
