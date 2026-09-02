@@ -1,0 +1,7 @@
+# Pins match pyproject.toml. Either of:
+#   uvx --with-requirements requirements.txt mkdocs build --strict
+#   uv run --locked mkdocs build --strict
+mkdocs==1.6.1
+mkdocs-material==9.7.7
+mkdocs-minify-plugin==0.8.0
+pymdown-extensions==11.0.1

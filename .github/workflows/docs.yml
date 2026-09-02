@@ -28,3 +28,10 @@ jobs:
       - run: uv sync --locked --python python
       - run: uv run --locked mkdocs build --strict --site-dir site
       - run: uv run --locked python scripts/check-site-links.py site
+      - name: External links
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: --config lychee.toml --no-progress site
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

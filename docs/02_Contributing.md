@@ -22,7 +22,9 @@ For this wiki, run:
 
 ```bash
 uv run --locked mkdocs build --strict --site-dir site
+uvx --with-requirements requirements.txt mkdocs build --strict --site-dir site
 uv run --locked python scripts/check-site-links.py site
+lychee --config lychee.toml site
 ```
 
 Include:

@@ -14,15 +14,22 @@ uv sync --locked
 mkdocs serve
 ```
 
+The same pins are in `requirements.txt` for a lock-free one-shot:
+
+```bash
+uvx --with-requirements requirements.txt mkdocs build --strict
+```
+
 Run the same checks as continuous integration before publishing a change:
 
 ```bash
 uv run --locked mkdocs build --strict --site-dir site
 uv run --locked python scripts/check-site-links.py site
+lychee --config lychee.toml site
 ```
 
-The direct dependencies live in `pyproject.toml`. Regenerate the universal
-lock after changing them:
+The direct dependencies live in `pyproject.toml` and `requirements.txt`
+with matching versions. Regenerate the universal lock after changing them:
 
 ```bash
 uv lock --upgrade

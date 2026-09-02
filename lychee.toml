@@ -1,0 +1,14 @@
+# External and generated-site link check.
+# Local fragments in the built site are also covered by
+# scripts/check-site-links.py.
+
+offline = false
+include_fragments = false
+accept = [200, 206, 429]
+max_retries = 3
+timeout = 20
+user_agent = "dseams-wiki-lychee"
+
+# Third-party URLs that stay dead after a live check and cannot be
+# rewritten to a working replacement. Keep each entry justified.
+exclude = []
