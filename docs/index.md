@@ -6,7 +6,7 @@ Process, worked examples, and the 2020 SQM notes. The product page is
 - Engine and `seams` CLI: [docs.dseams.info](https://docs.dseams.info)
 - Python `Frame`: [pydseams](https://d-seams.github.io/PydSEAMSlib/)
 - Lua `require("dseams")`: [yodaStruct](https://d-seams.github.io/yodaStruct/)
-- PLUMED action: [dseams-plumed](https://github.com/HaoZeke/dseams-plumed)
+- PLUMED action: [dseams-plumed](https://github.com/d-SEAMS/dseams-plumed)
 
 Cite the 2020 paper (DOI
 [10.1021/acs.jcim.0c00031](https://doi.org/10.1021/acs.jcim.0c00031),

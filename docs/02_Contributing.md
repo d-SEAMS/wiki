@@ -4,7 +4,7 @@
     Engine patches go to [seams-core](https://github.com/d-SEAMS/seams-core).
     Python is [PydSEAMSlib](https://github.com/d-SEAMS/PydSEAMSlib).
     Lua/Fennel is [yodaStruct](https://github.com/d-SEAMS/yodaStruct).
-    PLUMED is [dseams-plumed](https://github.com/HaoZeke/dseams-plumed).
+    PLUMED is [dseams-plumed](https://github.com/d-SEAMS/dseams-plumed).
     This wiki is [d-SEAMS/wiki](https://github.com/d-SEAMS/wiki).
     Doc prose in a book: see **Writing Docs**.
 

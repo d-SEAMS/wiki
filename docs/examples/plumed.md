@@ -42,4 +42,4 @@ Components include `nice`, `nmax`, `nclus`, `nic`, `nih`, `nmixed`,
 `chillice`, `chillmax`, `chillinterfacial`, `sixrings`, `nionice`,
 `nionfront`, `nionliq`, `nclasses`, and `nnamed`.
 
-Source: [dseams-plumed](https://github.com/HaoZeke/dseams-plumed).
+Source: [dseams-plumed](https://github.com/d-SEAMS/dseams-plumed).
