@@ -11,8 +11,8 @@ MkDocs wiki for d-SEAMS, published at
 
 This tree keeps process notes, the 2020 Software Quality Management
 course artifact (history), and the figshare pages rewritten for the
-2.7 public API (`seams` / `pydseams` / `require("dseams")` /
-`DSEAMS_CAGES`).
+seams-core 2.14.0 public API (`seams` / `pydseams` /
+`require("dseams")` / `DSEAMS_CAGES`).
 
 ## Build
 

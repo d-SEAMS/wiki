@@ -7,6 +7,11 @@ Process, worked examples, and the 2020 SQM notes. The product page is
 - Python `Frame`: [pydseams](https://d-seams.github.io/PydSEAMSlib/)
 - Lua `require("dseams")`: [yodaStruct](https://d-seams.github.io/yodaStruct/)
 - PLUMED action: [dseams-plumed](https://github.com/d-SEAMS/dseams-plumed)
+- R, Julia, Rust and Fortran:
+  [dseams-r](https://github.com/d-SEAMS/dseams-r),
+  [Dseams.jl](https://github.com/d-SEAMS/Dseams.jl),
+  [dseams-rs](https://github.com/d-SEAMS/dseams-rs),
+  [dseams-fortran](https://github.com/d-SEAMS/dseams-fortran)
 
 Cite the 2020 paper (DOI
 [10.1021/acs.jcim.0c00031](https://doi.org/10.1021/acs.jcim.0c00031),
@@ -17,9 +22,11 @@ Records: [Zenodo community](https://zenodo.org/communities/d-seams/).
 
 ## Examples
 
-These pages use the 2.7 public API. `seams` covers `read`, `chill`,
-`chill-plus`, `cages --graph seeded --complete`, `fingerprint`,
-`ions`, `rdf`, `cn`, `hbonds`, `pairs`, `density-z`, and `domains`.
+These pages use the seams-core 2.14.0 public API. `seams` covers
+`read`, `chill`, `chill-plus`, `ovito-chill+`, `cages --graph seeded
+--complete`, `symmetry`, `rings`, `prisms`, `cluster`, `fingerprint`,
+`ions`, `f4`, `steinhardt`, `rdf`, `cn`, `hbonds`, `pairs`,
+`density-z`, and `domains`.
 `pydseams` adds `Frame.from_file` / `from_ase` / `from_arrays`,
 `fingerprint`, `ion_environment`, and `IceFeaturizer`. Lua is
 `require("dseams")`. Collective variables use `DSEAMS_CAGES`.

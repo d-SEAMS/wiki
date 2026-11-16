@@ -10,7 +10,7 @@ in-plane calculation. The in-plane writer is `Frame.rdf_2d`.
 ## CLI (3D site-site)
 
 ```bash
-seams rdf dump-320.lammpstrj --types 2,2 --cutoff 12 --bins 240
+seams rdf dump-320.lammpstrj --pair-types 2,2 --cutoff 12 --bins 240
 ```
 
 Stdout is `# r g count`, then a header with types, rmax, bins, and
