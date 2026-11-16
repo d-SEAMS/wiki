@@ -9,17 +9,19 @@ copies of the same bonded graph share the key.
 
 ```bash
 seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2
-seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --colour-types
-seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --emit-library Ic > ic.keys
-seams fingerprint hydrate.lammpstrj --type 2 --hops 3 --library ic.keys
+seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --color-types
+seams fingerprint mW_cubic.lammpstrj --type 1 --hops 2 --emit-library Ic > ic2.keys
+seams fingerprint mW_cubic.lammpstrj --type 1 --hops 3 --emit-library Ic > ic3.keys
+seams fingerprint hydrate.lammpstrj --type 2 --hops 2 --library ic2.keys
 seams fingerprint hydrate.lammpstrj --type 2 --hops 3 --library ic3.keys,ic2.keys
 ```
 
 `--hops` is the number of bonds from the centre in each local key
-(default 2). `--colour-types` colours vertices by LAMMPS type so
+(default 2). `--color-types` colours vertices by LAMMPS type so
 species never match across types. `--emit-library LABEL` prints the
 frame's distinct keys as library lines under `LABEL`. `--library FILE`
-names atoms of a frame by that library. A comma-separated list of
+names atoms of a frame by that library; a single library must match
+the run's `--hops` and colouring, or `seams` exits with status 2. A comma-separated list of
 libraries built at different `--hops` names each atom by the deepest
 library that knows its key. An atom whose wide neighbourhood is
 disturbed still takes a name from its inner shells. The output adds

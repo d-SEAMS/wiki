@@ -8,7 +8,7 @@ all to a live OVITO pipeline.
 
 ```bash
 seams cages traj.lammpstrj --frame 1 --last 200 --per-atom cages.lammpstrj
-seams fingerprint traj.lammpstrj --hops 3 --library ic.keys --per-atom labels.lammpstrj
+seams fingerprint traj.lammpstrj --hops 3 --library ic3.keys --per-atom labels.lammpstrj
 seams ions brine.lammpstrj --ion-types 3,4 --per-atom ions.lammpstrj
 ```
 
