@@ -19,8 +19,8 @@ exclude = [
     # sentence in docs/03_license.md must keep this URL.
     '^https://www.gnu.org/licenses',
     # ACS and PNAS (and the doi.org hop to those hosts) return 403
-    # to automated clients. The DOI is the citation; no other public
-    # landing replaces it.
+    # to automated clients. scripts/check-dois.py resolves each DOI
+    # through the doi.org handle API instead.
     '^https://doi.org/',
     '^https://pubs.acs.org/',
     '^https://www.pnas.org/',

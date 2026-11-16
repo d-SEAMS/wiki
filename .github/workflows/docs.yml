@@ -35,6 +35,8 @@ jobs:
           fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: DOI handles
+        run: uv run --locked python scripts/check-dois.py README.md docs
 
   # wiki.dseams.info is a Netlify site that deploys the master branch; the
   # repository edits on main, so a green build mirrors main onto master
