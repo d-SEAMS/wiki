@@ -25,6 +25,8 @@ jobs:
         with:
           version: "0.12.5"
           enable-cache: true
+      - name: requirements.txt matches pyproject.toml
+        run: uv run --no-project --python 3.13 scripts/check-pins.py
       - run: uv sync --locked --python python
       - run: uv run --locked mkdocs build --strict --site-dir site
       - run: uv run --locked python scripts/check-site-links.py site
