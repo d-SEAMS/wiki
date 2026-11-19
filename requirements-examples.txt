@@ -1,0 +1,6 @@
+# Pinned scientific extras for scripts/run-examples.py.
+# Kept separate from the MkDocs pins in requirements.txt.
+pydseamslib==2.14.0
+numpy==2.2.6
+matplotlib==3.10.7
+linkcell==0.4.2

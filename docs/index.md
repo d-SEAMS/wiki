@@ -1,72 +1,35 @@
-# Wiki
+# Analyse water and ice with d-SEAMS
 
-Process, worked examples, and the 2020 SQM notes. The product page is
-[dseams.info](https://dseams.info). API books:
+d-SEAMS reads a molecular-dynamics frame and names the ice in it. One engine does the work. You can call it from Python, Julia, Rust, or the `seams` command, and the same frame gives the same census.
 
-- Engine and `seams` CLI: [docs.dseams.info](https://docs.dseams.info)
-- Python `Frame`: [pydseams](https://d-seams.github.io/PydSEAMSlib/)
-- Lua `require("dseams")`: [yodaStruct](https://d-seams.github.io/yodaStruct/)
-- PLUMED action: [dseams-plumed](https://github.com/d-SEAMS/dseams-plumed)
-- R, Julia, Rust and Fortran:
-  [dseams-r](https://github.com/d-SEAMS/dseams-r),
-  [Dseams.jl](https://github.com/d-SEAMS/Dseams.jl),
-  [dseams-rs](https://github.com/d-SEAMS/dseams-rs),
-  [dseams-fortran](https://github.com/d-SEAMS/dseams-fortran)
+The product page is [dseams.info](https://dseams.info). The engine book is [docs.dseams.info](https://docs.dseams.info). Language books:
 
-Cite the 2020 paper (DOI
-[10.1021/acs.jcim.0c00031](https://doi.org/10.1021/acs.jcim.0c00031),
-[arXiv:1909.09830](https://arxiv.org/abs/1909.09830)).
+- [Python](https://docs.dseams.info/stable/python.html) and the [Frame book](https://d-seams.github.io/PydSEAMSlib/)
+- [Julia](https://docs.dseams.info/stable/julia.html)
+- [Rust](https://docs.dseams.info/stable/rust.html)
+- [R](https://r.dseams.info/)
+- [Fortran](https://fortran.dseams.info/)
+- [Lua and Fennel](https://lua.dseams.info/)
+- [PLUMED](https://plumed.dseams.info/)
 
-Trajectories: [figshare project 73545](https://figshare.com/projects/d-SEAMS_Datasets/73545).
-Records: [Zenodo community](https://zenodo.org/communities/d-seams/).
+[linkcell](https://linkcell.dseams.info/) is a separate library for periodic neighbour search. d-SEAMS builds cutoff lists and mutual k-nearest lists of that kind. It is not a language binding.
 
-## Examples
+## Start here
 
-These pages use the seams-core 2.14.0 public API. `seams` covers
-`read`, `chill`, `chill-plus`, `ovito-chill+`, `cages --graph seeded
---complete`, `symmetry`, `rings`, `prisms`, `cluster`, `fingerprint`,
-`ions`, `f4`, `steinhardt`, `rdf`, `cn`, `hbonds`, `pairs`,
-`density-z`, and `domains`.
-`pydseams` adds `Frame.from_file` / `from_ase` / `from_arrays`,
-`fingerprint`, `ion_environment`, and `IceFeaturizer`. Lua is
-`require("dseams")`. Collective variables use `DSEAMS_CAGES`.
-The 2020 YAML / `yodaStruct -c` driver is gone.
+Each tutorial starts from a small file under `examples/inputs` and ends with a figure drawn from the run.
 
-`ds.read` remains a documented suffix-dispatch alias; new examples
-call `Frame.from_file` for LAMMPS dumps.
+1. [Bulk ice and hydrate cages](tutorials/bulk-ice.md): ice Ih, ice Ic, and the sI, sII, and sH cages.
+2. [Ice nanotubes](tutorials/nanotubes.md): tetragonal prism blocks.
+3. [Monolayer rings](tutorials/monolayer.md): a square sheet.
+4. [CHILL+ and q6](tutorials/order-parameters.md): a local label and a bond-order number on the same oxygens.
+5. [Ice/water interface](tutorials/interface.md): the basal stack and the front.
+6. [Nucleation](tutorials/nucleation.md): the largest ice cluster over three frames.
+7. [Radial distributions](tutorials/rdf.md): g(r) and the in-plane histogram.
+8. [Ions](tutorials/ions.md): a brine front.
+9. [On the fly with PLUMED](tutorials/plumed.md): the `DSEAMS_CAGES` counts a run can print and commit on.
 
-- [seams CLI](examples/cli.md)
-- [CHILL+ on a cubic lattice](examples/chillPlus.md)
-- [Bulk HC / DDC cages](examples/bulkTopologicalCriterion.md)
-- [Topology fingerprint](examples/fingerprint.md)
-- [Ions against cages](examples/ions.md)
-- [Ice features](examples/features.md)
-- [Visualise labels](examples/visualise.md)
-- [PLUMED DSEAMS_CAGES](examples/plumed.md)
-- [Ice nanotube prisms](examples/iceNanotube.md)
-- [Monolayer square ice](examples/monolayer.md)
-- [In-plane RDF](examples/rdf2d.md)
+The command reference for `seams` is the [CLI page](https://docs.dseams.info/reference/cli.html).
 
-## Python and Lua libraries
+## Cite
 
-The Python distribution is `pydseamslib` and its import is `pydseams`.
-The Lua module is `require("dseams")`; `require("yoda")` is a compatibility
-alias. Both libraries call the native engine and expose trajectory reading,
-CHILL/CHILL+, cages, fingerprints, ion environments, radial distributions,
-coordination numbers, hydrogen bonds, density profiles, ionic pairs, and
-domain statistics.
-
-Use the generated books for the live names:
-
-- [Python `Frame` and native API](https://d-seams.github.io/PydSEAMSlib/reference/python.html)
-- [Lua helpers](https://d-seams.github.io/yodaStruct/reference/lua.html)
-- [Lua compiled registrations](https://d-seams.github.io/yodaStruct/reference/lua-functions.html)
-
-## Process
-
-The [SQM plan](SQM%20Plan/index.md) is the 2020 Software Quality
-Management course artifact. Keep it as history.
-
-[Contributing](02_Contributing.md) ·
-[Code of conduct](01_Code_of_Conduct.md) ·
-[License](03_license.md)
+Goswami, Goswami, and Singh, J. Chem. Inf. Model. 2020, doi [10.1021/acs.jcim.0c00031](https://doi.org/10.1021/acs.jcim.0c00031). The citation page also lists the coming d-SEAMS 2.0 paper. See [Publications](reference/publications.md).

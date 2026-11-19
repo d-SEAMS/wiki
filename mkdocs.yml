@@ -1,33 +1,41 @@
 # yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
 
-site_name: d-SEAMS Wiki
-site_description: Project guides, examples, and process notes for d-SEAMS
+site_name: d-SEAMS
+site_description: Analyse water and ice structure with d-SEAMS
 site_author: d-SEAMS Core Team
 site_url: https://wiki.dseams.info
 theme:
   name: material
   language: en
   palette:
-    primary: blue grey
-    accent: indigo
-  font:
-    text: Rubik
-    code: Ubuntu Mono
+    scheme: default
+    primary: custom
+    accent: custom
+  font: false
   logo: images/logo.png
   favicon: images/favicon.ico
   icon:
     repo: fontawesome/brands/github
   features:
     - navigation.tabs
+    - navigation.sections
     - navigation.path
     - navigation.top
     - navigation.footer
+    - navigation.indexes
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+    - search.suggest
 
 repo_name: d-SEAMS/wiki
 repo_url: https://github.com/d-SEAMS/wiki
 edit_uri: edit/main/docs/
 
-copyright: Copyright &copy; 2019 d-SEAMS Core Team
+copyright: Copyright &copy; 2019-2026 d-SEAMS Core Team
+
+extra_css:
+  - stylesheets/dseams.css
 
 extra:
   social:
@@ -37,28 +45,38 @@ extra:
 
 nav:
   - Home: index.md
-  - Examples:
-      - seams CLI: examples/cli.md
-      - CHILL+: examples/chillPlus.md
-      - Bulk cages: examples/bulkTopologicalCriterion.md
-      - Fingerprint: examples/fingerprint.md
-      - Ions: examples/ions.md
-      - Ice features: examples/features.md
-      - Visualise labels: examples/visualise.md
-      - PLUMED: examples/plumed.md
-      - Ice nanotube: examples/iceNanotube.md
-      - Monolayer: examples/monolayer.md
-      - In-plane RDF: examples/rdf2d.md
-  - Lua:
-      - Compiled registrations: lua/functions.md
-      - Lua references: lua/references.md
-  - Process:
-      - Contributing: 02_Contributing.md
-      - Code of Conduct: 01_Code_of_Conduct.md
-      - Writing docs: 00_docWriting.md
-      - License: 03_license.md
-      - SQM plan: "SQM Plan/index.md"
-      - Style guide: "SQM Plan/00_styleGuide.md"
+  - Tutorials:
+      - Bulk ice and hydrate cages: tutorials/bulk-ice.md
+      - Ice nanotubes: tutorials/nanotubes.md
+      - Monolayer rings: tutorials/monolayer.md
+      - CHILL+ and q6: tutorials/order-parameters.md
+      - Ice/water interface: tutorials/interface.md
+      - Nucleation: tutorials/nucleation.md
+      - Radial distributions: tutorials/rdf.md
+      - Ions: tutorials/ions.md
+      - On the fly with PLUMED: tutorials/plumed.md
+  - How-to guides:
+      - Choose a cutoff: howto/cutoff.md
+      - Triclinic cells: howto/triclinic.md
+      - Read a trajectory: howto/readers.md
+      - Large systems: howto/threading.md
+      - Export labels: howto/export.md
+      - Paper figures: howto/paper.md
+  - Explanation:
+      - Primitive rings: explanation/rings.md
+      - Prisms and cages: explanation/cages.md
+      - Two ways to name ice: explanation/criteria.md
+      - Other tools: explanation/other-tools.md
+      - linkcell: explanation/linkcell.md
+  - Reference:
+      - Glossary: reference/glossary.md
+      - Structure gallery: reference/gallery.md
+      - Publications: reference/publications.md
+  - Community:
+      - Contributing: community/contributing.md
+      - Code of conduct: community/code-of-conduct.md
+      - Writing docs: community/writing.md
+      - License: community/license.md
 
 markdown_extensions:
   - admonition
@@ -75,8 +93,9 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
-  - pymdownx.smartsymbols
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
