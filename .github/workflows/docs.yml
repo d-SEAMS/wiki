@@ -40,10 +40,57 @@ jobs:
       - name: DOI handles
         run: uv run --locked python scripts/check-dois.py README.md docs
 
+  examples:
+    name: Worked examples
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - uses: astral-sh/setup-uv@20cfd1bf945f4377ade1205e4dbc17946fc9a30d # v10.0.1
+        with:
+          version: "0.12.5"
+          enable-cache: true
+      - name: libseams 2.14.0
+        run: |
+          curl -fsSL -o libseams.tar.gz -L https://github.com/d-SEAMS/seams-core/releases/download/v2.14.0/libseams-2.14.0-linux-x86_64.tar.gz
+          echo "e745ebb3039bb17febdfded579c47cd6d8268e919d823d67b4a243e41d67567f  libseams.tar.gz" | sha256sum -c
+          mkdir -p "$RUNNER_TEMP/seams"
+          tar -xzf libseams.tar.gz -C "$RUNNER_TEMP/seams"
+          echo "SEAMS_HOME=$RUNNER_TEMP/seams/libseams-2.14.0" >> "$GITHUB_ENV"
+          echo "$RUNNER_TEMP/seams/libseams-2.14.0/bin" >> "$GITHUB_PATH"
+          echo "LD_LIBRARY_PATH=$RUNNER_TEMP/seams/libseams-2.14.0/lib" >> "$GITHUB_ENV"
+      - name: Example packages
+        run: |
+          uv venv "$RUNNER_TEMP/py"
+          uv pip install --python "$RUNNER_TEMP/py/bin/python" -r requirements-examples.txt
+          echo "$RUNNER_TEMP/py/bin" >> "$GITHUB_PATH"
+      - name: Rust 1.85.0
+        run: |
+          curl --proto '=https' --tlsv1.2 -fsSL https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.85.0 --profile minimal
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+      - name: Julia 1.11.4
+        run: |
+          curl -fsSL -o julia.tar.gz https://julialang-s3.julialang.org/bin/linux/x64/1.11/julia-1.11.4-linux-x86_64.tar.gz
+          echo "fb3d3c5fccef82158a70677c0044ac5ae40410eceb0604cdc8e643eeff21df8d  julia.tar.gz" | sha256sum -c
+          tar -xzf julia.tar.gz -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/julia-1.11.4/bin" >> "$GITHUB_PATH"
+      - name: Dseams.jl
+        run: |
+          git init "$RUNNER_TEMP/Dseams.jl"
+          git -C "$RUNNER_TEMP/Dseams.jl" remote add origin https://github.com/d-SEAMS/Dseams.jl
+          git -C "$RUNNER_TEMP/Dseams.jl" fetch --depth 1 origin 193ac43d48f2bf951385e4db647e4673831661bf
+          git -C "$RUNNER_TEMP/Dseams.jl" checkout FETCH_HEAD
+          julia --project="$RUNNER_TEMP/Dseams.jl" "$RUNNER_TEMP/Dseams.jl/dev/develop_jll.jl"
+          echo "DSEAMS_JL=$RUNNER_TEMP/Dseams.jl" >> "$GITHUB_ENV"
+      - name: Run the worked examples
+        run: python scripts/run-examples.py
+
   # wiki.dseams.info is a Netlify site that deploys the master branch; the
   # repository edits on main, so a green build mirrors main onto master
   mirror-master:
-    needs: [build]
+    needs: [build, examples]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
