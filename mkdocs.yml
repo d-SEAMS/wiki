@@ -61,6 +61,7 @@ nav:
       - Read a trajectory: howto/readers.md
       - Large systems: howto/threading.md
       - Export labels: howto/export.md
+      - Topology fingerprints: howto/fingerprint.md
       - Paper figures: howto/paper.md
   - Explanation:
       - Primitive rings: explanation/rings.md
@@ -72,6 +73,18 @@ nav:
       - Glossary: reference/glossary.md
       - Structure gallery: reference/gallery.md
       - Publications: reference/publications.md
+      - Earlier pages:
+          - seams CLI: examples/cli.md
+          - CHILL+: examples/chillPlus.md
+          - Bulk cages: examples/bulkTopologicalCriterion.md
+          - Fingerprint: examples/fingerprint.md
+          - Ions: examples/ions.md
+          - Ice features: examples/features.md
+          - Visualise labels: examples/visualise.md
+          - PLUMED: examples/plumed.md
+          - Ice nanotube: examples/iceNanotube.md
+          - Monolayer: examples/monolayer.md
+          - In-plane RDF: examples/rdf2d.md
   - Community:
       - Contributing: community/contributing.md
       - Code of conduct: community/code-of-conduct.md

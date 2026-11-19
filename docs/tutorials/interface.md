@@ -92,8 +92,11 @@ The frame is `examples/inputs/interface_f0.lammpstrj`: 864 oxygens in a box abou
     grep -q "hexagonal 352" /tmp/interface.txt
     grep -q "water 434" /tmp/interface.txt
     grep -q "stack HHHHHHHH....C." /tmp/interface.txt
+    seams chill-plus examples/inputs/interface_f0.lammpstrj --type 1 --cutoff 3.5 --tum-layers | tee /tmp/interface-tum.txt
+    grep -q "tum-stack HHHHHHH......." /tmp/interface-tum.txt
+    grep -q "tum-phi-c 0" /tmp/interface-tum.txt
     ```
 
 ![Ice fraction along the interface normal](../images/figures/interface.png)
 
-The published CHILL+ rule finds 352 hexagonal molecules, 434 waters, 49 interfacial molecules, and a single cubic molecule. `--layers` prints the basal stack `HHHHHHHH....C.`: eight hexagonal slabs, a gap, and one cubic layer. The hexagonal fraction along z stays near one through that slab and falls through one half in the next 3.7 angstrom bin. A coloured render is in the [gallery](../reference/gallery.md).
+The published CHILL+ rule finds 352 hexagonal molecules, 434 waters, 49 interfacial molecules, and a single cubic molecule. `--layers` prints the basal stack `HHHHHHHH....C.`: eight hexagonal slabs, a gap, and one cubic layer. `--tum-layers` prints the stack taken from the basal rings of the hexagonal cages and the equatorial rings of the double-diamond cages. On this frame that line is `tum-stack HHHHHHH.......`, with `tum-phi-c 0`. The hexagonal fraction along z stays near one through the CHILL+ slab and falls through one half in the next 3.7 angstrom bin. A coloured render is in the [gallery](../reference/gallery.md).

@@ -176,4 +176,6 @@ Run the blocks from the repository root.
 
 Ice Ih is entirely hexagonal, both by CHILL+ and by the cage score. Ice Ic is entirely cubic. One sII cell holds 16 dodecahedra and 8 hexakaidecahedra. The sH cell is triclinic. Its tilt is the subject of [Triclinic cells](../howto/triclinic.md).
 
+On a signature search, `--shape` appends a point-group token for each cage, taken from that cage's own vertices. The default guest placement, with `--guest-types`, is the nearest cage centre within `--guest-radius`. `--inside` counts a guest when a ray from the guest crosses the cage faces an odd number of times.
+
 The renders of these frames are in the [gallery](../reference/gallery.md). The cage shapes are explained in [Prisms and cages](../explanation/cages.md).

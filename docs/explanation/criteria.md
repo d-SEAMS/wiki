@@ -8,4 +8,4 @@ The topological criterion asks that question. Membership in a hexagonal cage or 
 
 q6 is a third number, not a third structure. The Steinhardt parameter measures how directional the neighbour shell is. The Lechner-Dellago average q6-bar (J. Chem. Phys. 129, 114707, 2008, doi [10.1063/1.2977970](https://doi.org/10.1063/1.2977970)) mixes a molecule with its neighbours. A growing nucleus moves the largest cage cluster long before it moves the mean q6-bar of a large liquid cell. That is why [Nucleation](../tutorials/nucleation.md) plots the cluster.
 
-The codes written by `--per-atom` follow the CHILL+ order: 0 cubic, 1 hexagonal, 2 water, 3 interfacial, 4 clathrate, 5 interfacial clathrate. How to load that column is [Export labels](../howto/export.md).
+The column written by `seams chill-plus --per-atom` follows that order: 0 cubic, 1 hexagonal, 2 water, 3 interfacial, 4 clathrate, 5 interfacial clathrate. `cages`, `fingerprint`, and `ions` write their own columns. How to load each one is [Export labels](../howto/export.md).
