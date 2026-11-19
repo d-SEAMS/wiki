@@ -1,0 +1,8 @@
+[package]
+name = "wiki-examples"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+dseams = "=2.14.0"

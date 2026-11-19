@@ -1,0 +1,50 @@
+/* Palette of dseams.info: paper, abyss, cobalt. */
+
+:root,
+[data-md-color-primary="custom"] {
+  --md-primary-fg-color: #0e4da4;
+  --md-primary-fg-color--light: #0086c9;
+  --md-primary-fg-color--dark: #0a3b82;
+  --md-accent-fg-color: #0086c9;
+  --md-default-bg-color: #f5f9fe;
+  --md-default-fg-color: #0a1a2b;
+  --md-default-fg-color--light: #3e566e;
+  --md-typeset-a-color: #0e4da4;
+  --md-code-bg-color: #e8f2fc;
+  --md-footer-bg-color: #081829;
+  --md-footer-bg-color--dark: #081829;
+}
+
+.md-header,
+.md-tabs {
+  background-color: #081829;
+  color: #ffffff;
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.6rem;
+}
+
+body,
+.md-typeset {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.md-typeset code,
+.md-typeset pre {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: #081829;
+  font-weight: 650;
+}
+
+.md-typeset .tabbed-labels > label {
+  color: #0a1a2b;
+}
