@@ -29,6 +29,11 @@ lychee --config lychee.toml README.md docs
 scripts/check-external-links.sh
 ```
 
+Worked examples live in fenced blocks whose first line is `# example`
+(or `// example` for Rust). `scripts/run-examples.py` runs each one.
+It needs `SEAMS_HOME` and `DSEAMS_JL`, and the packages in
+`requirements-examples.txt`.
+
 The direct dependencies live in `pyproject.toml` and `requirements.txt`
 with matching versions. Regenerate the universal lock after changing them:
 
