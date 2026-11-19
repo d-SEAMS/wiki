@@ -10,6 +10,8 @@
 
 **DDC.** Double-diamond cage, the unit of ice Ic.
 
+**Fingerprint.** The label-independent key of a bonded graph: one rooted neighbourhood class per atom, the histogram of those classes, and the primitive-ring census. See [Topology fingerprints](../howto/fingerprint.md).
+
 **HC.** Hexagonal cage, the unit of ice Ih.
 
 **Ice Ic.** Cubic ice. Every molecule of the 64-oxygen cell is in a DDC.

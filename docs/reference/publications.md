@@ -23,6 +23,10 @@ Rohit Goswami, Amrita Goswami, Ruhila Goswami, and Jayant K. Singh. Incremental 
 
 The figures of that paper are rebuilt from [d-SEAMS/dseams2_repro](https://github.com/d-SEAMS/dseams2_repro). See [Paper figures](../howto/paper.md).
 
+## Records
+
+Deposited records are listed in the [Zenodo community](https://zenodo.org/communities/d-seams/records).
+
 ## Criteria named in these pages
 
 - Nguyen and Molinero, CHILL+. *J. Phys. Chem. B* 2015. doi [10.1021/jp510289t](https://doi.org/10.1021/jp510289t).
